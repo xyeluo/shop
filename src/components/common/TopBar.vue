@@ -1,7 +1,7 @@
 <template>
   <div class="topbar">
-    <div class="topbar-bd com-margin-center com-clearfix">
-      <ul class="com-float-left com-flex-center com-mouse-point">
+    <div class="topbar-bd com-margin-center com-flex">
+      <ul class="com-flex-center com-mouse-point">
         <li class="topbar-bd-change">
           <div class="topbar-bd-hd">
             <span>中国大陆</span>
@@ -9,9 +9,9 @@
           </div>
           <div class="topbar-bd-menu com-absolute">
             <ul class="com-overflow-scroll">
-              <li>全球</li>
-              <li>中国登录</li>
-              <li>中国大陆</li>
+              <li v-for="(item, index) in menus.address" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </li>
@@ -22,7 +22,7 @@
         <li class="topbar-color-change"><a href="">手机逛淘宝</a></li>
         <li class="topbar-color-change"><a href="">网页无障碍</a></li>
       </ul>
-      <ul class="com-float-right com-flex-center com-mouse-point">
+      <ul class="right com-flex-center com-mouse-point">
         <li class="topbar-bd-change">
           <div class="topbar-bd-hd">
             <span>我的淘宝</span>
@@ -30,14 +30,16 @@
           </div>
           <div class="topbar-bd-menu com-absolute">
             <ul>
-              <li>已买到的宝贝</li>
-              <li>我的足迹</li>
+              <li v-for="(item, index) in menus.mytaobao" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </li>
         <li class="topbar-color-change">
           <a href=""
-            ><span class="iconfont icon-gouwuche-tianchong color"></span>购物车</a
+            ><span class="iconfont icon-gouwuche-tianchong color"></span
+            >购物车</a
           >
         </li>
         <li class="topbar-bd-change">
@@ -48,8 +50,9 @@
           </div>
           <div class="topbar-bd-menu com-absolute">
             <ul>
-              <li><a href="">收藏的宝贝</a></li>
-              <li>收藏的店铺</li>
+              <li v-for="(item, index) in menus.favorite" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </li>
@@ -64,8 +67,9 @@
           </div>
           <div class="topbar-bd-menu com-absolute">
             <ul>
-              <li><a href="">收藏的宝贝</a></li>
-              <li>收藏的店铺</li>
+              <li v-for="(item, index) in menus.qianNiuMaiJia" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </li>
@@ -76,8 +80,9 @@
           </div>
           <div class="topbar-bd-menu com-absolute">
             <ul>
-              <li><a href="">收藏的宝贝</a></li>
-              <li>收藏的店铺</li>
+              <li v-for="(item, index) in menus.contactServe" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </li>
@@ -87,24 +92,43 @@
 </template>
 
 <script>
+import { getTopBar } from '@/request/index.js'
 export default {
-  name: 'TopBar'
+  name: 'TopBar',
+  data () {
+    return {
+      menus: {}
+    }
+  },
+  created () {
+    getTopBar().then((res) => {
+      this.menus = res
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 $t: ".topbar";
-@mixin top-border {
-  border: 1px solid #eee;
+@mixin topbar($type) {
+  @if ($type==bd) {
+    border: 1px solid #eee;
+  } @else if($type==mr) {
+    margin-right: 7px;
+  }
 }
 #{$t} {
   width: 100%;
   background-color: #f5f5f5;
+  .slicer {
+    padding: 0 5px;
+  }
   #{$t}-bd {
     $height: 35px; //li高度
-    @include top-border();
+    @include topbar(bd);
     width: 1190px;
     height: $height;
+    justify-content: space-between;
     li {
       padding: 0 6px;
       line-height: $height;
@@ -112,14 +136,14 @@ $t: ".topbar";
       position: relative;
       text-align: center;
       #{$t}-bd-hd span:first-child {
-        margin-right: 7px;
+        @include topbar(mr);
       }
     }
     // 导航栏悬浮改变字体颜色
     #{$t}-color-change {
       a {
         display: inline-block;
-        margin-right: 7px;
+        @include topbar(mr);
         color: #6c6c6c;
         &:hover {
           color: #f22e00;
@@ -136,7 +160,7 @@ $t: ".topbar";
         ul {
           padding: 8px 0;
           max-height: 270px;
-          @include top-border();
+          @include topbar(bd);
           li {
             width: 249px;
             height: $height - 6;
@@ -158,26 +182,24 @@ $t: ".topbar";
     }
     // 左右导航栏个别样式设置
     .color {
-      color: #f22e00;
+      color: #f22e00 !important;
     }
-    .com-float-right #{$t}-bd-change {
+    .right #{$t}-bd-change {
       #{$t}-bd-menu ul li {
         width: auto;
         text-align: center;
-        padding: 0 5px;
+        @extend .slicer;
         white-space: nowrap;
         color: #6c6c6c;
       }
       .icon-shoucang1 {
         color: #9c9c9c;
       }
-      &:hover, &:hover .icon-shoucang1{
+      &:hover,
+      &:hover .icon-shoucang1 {
         color: #f22e00;
       }
     }
-  }
-  .slicer{
-    padding: 0 5px;
   }
 }
 // 字体图标
