@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 
 import 'comtoolcss'
-import '@/assets/css/base.css'
-import '@/assets/font/iconfont.css'
+import '@ass/css/base.css'
+import '@ass/font/iconfont.css'
 
 Vue.config.productionTip = false
 
