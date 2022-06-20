@@ -2361,6 +2361,11 @@ compression@^1.7.4:
     safe-buffer "5.1.2"
     vary "~1.1.2"
 
+comtoolcss@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/comtoolcss/-/comtoolcss-0.2.2.tgz#dc0bb927c8a7b81756732a0c6a1218cbf1f01eaa"
+  integrity sha512-BEAI0rhwiL4GxiT7O/slt4cwmUQt1NBA12vfAtDxjk87H0OnhMoxvD1TBDYBZy95/eNB3UL4HGv1A/GQlEECPw==
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
