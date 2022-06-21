@@ -11,7 +11,7 @@
     <div class="main-inner com-flex">
       <div class="banner radius12">
         <div
-          class="swiper-container ba"
+          class="ba"
           @mouseenter="bannerSw.autoplay.stop()"
           @mouseleave="bannerSw.autoplay.start()"
         >
@@ -75,7 +75,24 @@
             <span>我的足迹</span>
           </div>
         </div>
-        <div class="tips"></div>
+        <div
+          class="tips"
+          @mouseenter="tipsSw.autoplay.stop()"
+          @mouseleave="tipsSw.autoplay.start()"
+        >
+          <div class="tipsSw">
+            <ul class="swiper-wrapper">
+              <li
+                class="swiper-slide"
+                v-for="(item, index) in tips"
+                :key="index"
+              >
+                <span>{{ item.title }}</span
+                >{{ item.msg }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -98,16 +115,20 @@ export default {
         require('@images/pic_011.jpeg')
       ],
       bannerSw: '',
-      userContents: []
+      tipsSw: '',
+      userContents: [],
+      tips: []
     }
   },
   created () {
-    getMainService().then(({ services, userContents }) => {
+    getMainService().then(({ services, userContents, tips }) => {
       this.services = services
       this.userContents = userContents
+      this.tips = tips
     })
   },
   mounted () {
+    // 广告轮播图
     this.bannerSw = new Swiper('.ba', {
       autoplay: {
         delay: 3500 // 3秒切换一次
@@ -117,11 +138,19 @@ export default {
         nextEl: '.banner-next',
         prevEl: '.banner-prev'
       },
+      grabCursor: true,
       pagination: {
         // 指示点
         el: '.banner-pagination',
         clickable: true // 为true时点击指示点会切换slide
       }
+    })
+    // 热点轮播图
+    this.tipsSw = new Swiper('.tipsSw', {
+      autoplay: {
+        delay: 4000
+      },
+      loop: true
     })
   }
 }
@@ -275,6 +304,26 @@ export default {
       }
       &:hover {
         color: #f40;
+      }
+    }
+  }
+  .tips {
+    width: 265px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 25px 0;
+    li {
+      cursor: default;
+      span {
+        width: 32px;
+        height: 18px;
+        text-align: center;
+        line-height: 18px;
+        background-color: #ffefef;
+        border-radius: 2px;
+        color: #ff5000;
+        font-size: 12px;
+        margin-right: 4px;
       }
     }
   }

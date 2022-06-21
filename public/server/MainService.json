@@ -14,5 +14,11 @@
     { "class": "icon-shoutibao", "msg": "宝贝收藏" },
     { "class": "icon-dianpu", "msg": "宝贝收藏" },
     { "class": "icon-lishijilu_o", "msg": "宝贝收藏" }
+  ],
+  "tips": [
+    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
+    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
+    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
+    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" }
   ]
 }
