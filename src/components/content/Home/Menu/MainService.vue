@@ -223,7 +223,7 @@ export default {
       font-size: 16px;
       background: rgba($color: #000, $alpha: 0.5);
       cursor: default;
-      // display: none;
+      display: none;
       user-select: none;
     }
     .banner-prev {
