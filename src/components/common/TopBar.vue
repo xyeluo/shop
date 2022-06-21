@@ -157,6 +157,7 @@ $t: ".topbar";
         left: 0;
         display: none;
         z-index: 10;
+        background-color: #fff;
         ul {
           padding: 8px 0;
           max-height: 270px;

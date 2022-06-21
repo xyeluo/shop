@@ -1,17 +1,13 @@
 <template>
   <div id="shop">
-    <TopBar></TopBar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TopBar from '@cmm/TopBar.vue'
 export default {
   name: 'App',
-  components: {
-    TopBar
-  }
+  components: {}
 }
 </script>
 <style lang="scss">
@@ -22,7 +18,12 @@ body #shop {
   width: 1190px;
   min-width: 1190px;
 }
-img{
+img {
   width: 100%;
+}
+@mixin hfl($h, $size, $lh: $h) {
+  height: $h;
+  font-size: $size;
+  line-height: $lh;
 }
 </style>

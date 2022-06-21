@@ -1,15 +1,19 @@
 <template>
   <div class="home">
-    <SuperBanner></SuperBanner>
+    <TopBar></TopBar>
+    <SearchHome></SearchHome>
+    <div class="temp">
+
+    </div>
   </div>
 </template>
 
 <script>
-import SuperBanner from '@cpts/Home/SuperBanner.vue'
+import SearchHome from '@cpts/Home/Search.vue'
 export default {
   name: 'HomeView',
   components: {
-    SuperBanner
+    SearchHome
   }
 }
 </script>
@@ -18,6 +22,10 @@ export default {
 $t: ".home";
 
 #{$t} {
-  // width: 1190px;
+  width: 100%;
+  background-color: #e8e2e0;
+}
+.temp{
+  height: 1800px;
 }
 </style>
