@@ -11,6 +11,22 @@
         <NewService></NewService>
         <MainService></MainService>
       </div>
+      <div class="layer">
+        <div class="recommend">
+          <div class="recommend-heade">
+            <h3>
+              <span>猜你喜欢</span><img src="@images/pic_020.png" alt="" />
+            </h3>
+          </div>
+          <div class="recommend-content">
+            <PodItem
+              v-for="(item, index) in prodInfo"
+              :key="index"
+              :info="item"
+            ></PodItem>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,17 +35,28 @@
 import SearchHome from '@cpts/Home/Search.vue'
 import NewService from '@cpts/Home/Menu/NewService.vue'
 import MainService from '@cpts/Home/Menu/MainService.vue'
+import PodItem from '@cpts/Home/PodItem.vue'
+
+import { getProdInfo } from '@/request/index.js'
+
 export default {
   name: 'HomeView',
   data () {
     return {
-      searchHot: ['新款连衣裙', '四件套', '潮流T恤', '时尚女鞋']
+      searchHot: ['新款连衣裙', '四件套', '潮流T恤', '时尚女鞋'],
+      prodInfo: []
     }
   },
   components: {
     SearchHome,
     NewService,
-    MainService
+    MainService,
+    PodItem
+  },
+  created () {
+    getProdInfo().then((res) => {
+      this.prodInfo = res
+    })
   }
 }
 </script>
@@ -40,9 +67,8 @@ $t: ".home";
 #{$t} {
   width: 100%;
   background-color: #e8e2e0;
-
   #{$t}-content {
-    height: 1800px;
+    height: 1000px;
     background: #fff;
     border-radius: 18px 18px 0 0;
     position: relative;
@@ -61,10 +87,28 @@ $t: ".home";
     color: #666;
   }
 }
-.menu{
+.menu {
   justify-content: space-between;
 }
-.temp {
-  height: 1800px;
+.layer {
+  margin-top: 50px;
+  .recommend-heade {
+    margin-bottom: 20px;
+    span {
+      color: #111;
+      vertical-align: middle;
+      font-size: 24px;
+    }
+    img {
+      width: auto;
+      height: 20px;
+    }
+  }
+  .recommend-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 13px;
+    grid-row-gap: 16px;
+  }
 }
 </style>

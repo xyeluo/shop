@@ -58,8 +58,8 @@ export default {
           window.pageYOffset ||
           document.documentElement.scrollTop ||
           document.body.scrollTop
-      const offsetTop = this.$refs.search.offsetTop
-      scrollTop > offsetTop ? (this.isTop = true) : (this.isTop = false)
+      const offsetTo = this.$refs.search.offsetTop
+      scrollTop > offsetTo ? (this.isTop = true) : (this.isTop = false)
     }
   },
   // 监听页面滚动
