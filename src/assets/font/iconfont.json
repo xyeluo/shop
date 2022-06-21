@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "980",
+      "name": "淘宝特色",
+      "font_class": "taobaotese",
+      "unicode": "f0033",
+      "unicode_decimal": 983091
+    },
+    {
       "icon_id": "5135",
       "name": "数码手机",
       "font_class": "shumashouji",
@@ -20,18 +27,18 @@
       "unicode_decimal": 58895
     },
     {
+      "icon_id": "725792",
+      "name": "安全保障",
+      "font_class": "anquan",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "1048427",
       "name": "男装类目",
       "font_class": "nanzhuangleimu",
       "unicode": "e6f6",
       "unicode_decimal": 59126
-    },
-    {
-      "icon_id": "1086204",
-      "name": "首页食品",
-      "font_class": "shouyeshipin",
-      "unicode": "e61e",
-      "unicode_decimal": 58910
     },
     {
       "icon_id": "2076277",
@@ -55,11 +62,25 @@
       "unicode_decimal": 60283
     },
     {
+      "icon_id": "5730843",
+      "name": "付款",
+      "font_class": "fukuan",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
       "icon_id": "5735734",
       "name": "家具-5",
       "font_class": "jiaju-",
       "unicode": "e821",
       "unicode_decimal": 59425
+    },
+    {
+      "icon_id": "5737684",
+      "name": "食物-1",
+      "font_class": "shiwu-",
+      "unicode": "ebc7",
+      "unicode_decimal": 60359
     },
     {
       "icon_id": "7629077",
@@ -88,6 +109,13 @@
       "font_class": "shoucang",
       "unicode": "e8b9",
       "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "11372760",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e8c3",
+      "unicode_decimal": 59587
     },
     {
       "icon_id": "11372777",

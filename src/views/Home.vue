@@ -29,6 +29,7 @@
       </div>
     </div>
     <SideBar :backTop="showBT"></SideBar>
+    <FooterVue></FooterVue>
   </div>
 </template>
 

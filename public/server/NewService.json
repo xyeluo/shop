@@ -36,7 +36,7 @@
     "third": { "href": "", "msg": "奢品" }
   },
   {
-    "class": "icon-shouyeshipin",
+    "class": "icon-shiwu-",
     "first": { "href": "", "msg": "女装" },
     "second": { "href": "", "msg": "内衣" },
     "third": { "href": "", "msg": "奢品" }
