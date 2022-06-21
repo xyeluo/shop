@@ -11,7 +11,7 @@
         <NewService></NewService>
         <MainService></MainService>
       </div>
-      <div class="layer">
+      <div class="layer" ref="layer">
         <div class="recommend">
           <div class="recommend-heade">
             <h3>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <SideBar></SideBar>
+    <SideBar :backTop="showBT"></SideBar>
   </div>
 </template>
 
@@ -46,7 +46,18 @@ export default {
   data () {
     return {
       searchHot: ['新款连衣裙', '四件套', '潮流T恤', '时尚女鞋'],
-      prodInfo: []
+      prodInfo: [],
+      offsetTo: '',
+      showBT: false
+    }
+  },
+  methods: {
+    showBackTop () {
+      const scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+      scrollTop > this.offsetTo ? (this.showBT = true) : (this.showBT = false)
     }
   },
   components: {
@@ -60,6 +71,16 @@ export default {
     getProdInfo().then((res) => {
       this.prodInfo = res
     })
+  },
+  // 监听页面滚动
+  mounted () {
+    this.offsetTo = this.$refs.layer.offsetTop
+    window.addEventListener('scroll', this.showBackTop, true)
+  },
+  // 离开当前组件前清除滚动监听,
+  beforeRouteLeave (to, from, next) {
+    window.removeEventListener('scroll', this.showBackTop, true)
+    next()
   }
 }
 </script>
