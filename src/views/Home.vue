@@ -7,7 +7,7 @@
       <ul class="search-hot com-absolute-center-x com-flex">
         <li v-for="(item, index) in searchHot" :key="index">{{ item }}</li>
       </ul>
-      <div class="menu">
+      <div class="menu com-flex">
         <NewService></NewService>
         <MainService></MainService>
       </div>
@@ -60,6 +60,9 @@ $t: ".home";
     white-space: nowrap;
     color: #666;
   }
+}
+.menu{
+  justify-content: space-between;
 }
 .temp {
   height: 1800px;

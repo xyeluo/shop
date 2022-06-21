@@ -28,5 +28,6 @@ img {
 }
 .radius12 {
   border-radius: 12px;
+  overflow: hidden;
 }
 </style>
