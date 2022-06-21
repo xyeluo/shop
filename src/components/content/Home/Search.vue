@@ -115,7 +115,7 @@ export default {
       height: 0;
       overflow: hidden;
       text-indent: -9999px;
-      background: url("@images/pic_017.png") 0 0 no-repeat;
+      background: url("@images/pic_018.png") 0 0 no-repeat;
     }
   }
   h2 {
@@ -127,7 +127,7 @@ export default {
       height: 0;
       text-indent: -9999px;
       overflow: hidden;
-      background: url("@images/pic_018.png") 0 0 no-repeat;
+      background: url("@images/pic_019.png") 0 0 no-repeat;
     }
   }
 }

@@ -1,10 +1,18 @@
-[
-  { "class": "red", "href": "", "msg": "天猫" },
-  { "class": "red", "href": "", "msg": "聚划算" },
-  { "class": "lightgreen", "href": "", "msg": "聚划算" },
-  { "class": "", "href": "", "msg": "聚划算" },
-  { "class": "", "href": "", "msg": "聚划算" },
-  { "class": "", "href": "", "msg": "聚划算" },
-  { "class": "", "href": "", "msg": "聚划算" },
-  { "class": "spannone", "href": "", "msg": "聚划算" }
-]
+{
+  "services": [
+    { "class": "red", "href": "", "msg": "天猫" },
+    { "class": "red", "href": "", "msg": "聚划算" },
+    { "class": "lightgreen", "href": "", "msg": "聚划算" },
+    { "class": "", "href": "", "msg": "聚划算" },
+    { "class": "", "href": "", "msg": "聚划算" },
+    { "class": "", "href": "", "msg": "聚划算" },
+    { "class": "", "href": "", "msg": "聚划算" },
+    { "class": "spannone", "href": "", "msg": "聚划算" }
+  ],
+  "userContents": [
+    { "class": "icon-shoucang", "msg": "宝贝收藏" },
+    { "class": "icon-shoutibao", "msg": "宝贝收藏" },
+    { "class": "icon-dianpu", "msg": "宝贝收藏" },
+    { "class": "icon-lishijilu_o", "msg": "宝贝收藏" }
+  ]
+}
