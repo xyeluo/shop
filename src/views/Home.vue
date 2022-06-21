@@ -28,6 +28,7 @@
         </div>
       </div>
     </div>
+    <SideBar></SideBar>
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import SearchHome from '@cpts/Home/Search.vue'
 import NewService from '@cpts/Home/Menu/NewService.vue'
 import MainService from '@cpts/Home/Menu/MainService.vue'
 import PodItem from '@cpts/Home/PodItem.vue'
+import SideBar from '@cpts/Home/SideBar.vue'
 
 import { getProdInfo } from '@/request/index.js'
 
@@ -51,7 +53,8 @@ export default {
     SearchHome,
     NewService,
     MainService,
-    PodItem
+    PodItem,
+    SideBar
   },
   created () {
     getProdInfo().then((res) => {

@@ -9,12 +9,12 @@
       </ul>
     </div>
     <div class="main-inner com-flex">
-      <div class="banner radius12">
-        <div
-          class="ba"
-          @mouseenter="bannerSw.autoplay.stop()"
-          @mouseleave="bannerSw.autoplay.start()"
-        >
+      <div
+        class="banner radius12"
+        @mouseenter="bannerSw.autoplay.stop()"
+        @mouseleave="bannerSw.autoplay.start()"
+      >
+        <div class="ba">
           <div class="swiper-wrapper">
             <div
               class="swiper-slide"
@@ -75,12 +75,12 @@
             <span>我的足迹</span>
           </div>
         </div>
-        <div
-          class="tips"
-          @mouseenter="tipsSw.autoplay.stop()"
-          @mouseleave="tipsSw.autoplay.start()"
-        >
-          <div class="tipsSw">
+        <div class="tips">
+          <div
+            class="tipsSw"
+            @mouseenter="tipsSw.autoplay.stop()"
+            @mouseleave="tipsSw.autoplay.start()"
+          >
             <ul class="swiper-wrapper">
               <li
                 class="swiper-slide"
@@ -150,7 +150,9 @@ export default {
       autoplay: {
         delay: 4000
       },
-      loop: true
+      loop: true,
+      observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true // 修改swiper的父元素时，自动初始化swiper
     })
   }
 }
