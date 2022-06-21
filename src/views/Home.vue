@@ -68,7 +68,6 @@ $t: ".home";
   width: 100%;
   background-color: #e8e2e0;
   #{$t}-content {
-    height: 1000px;
     background: #fff;
     border-radius: 18px 18px 0 0;
     position: relative;
@@ -92,6 +91,7 @@ $t: ".home";
 }
 .layer {
   margin-top: 50px;
+  min-height: 150px;
   .recommend-heade {
     margin-bottom: 20px;
     span {

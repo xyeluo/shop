@@ -49,21 +49,22 @@ export default {
 
   data () {
     return {
-      isTop: false
+      isTop: false,
+      offsetTo: ''
     }
   },
   methods: {
     handleTabFix () {
       const scrollTop =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop
-      const offsetTo = this.$refs.search.offsetTop
-      scrollTop > offsetTo ? (this.isTop = true) : (this.isTop = false)
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop
+      scrollTop > this.offsetTo ? (this.isTop = true) : (this.isTop = false)
     }
   },
   // 监听页面滚动
   mounted () {
+    this.offsetTo = this.$refs.search.offsetTop
     window.addEventListener('scroll', this.handleTabFix, true)
   },
   // 离开当前组件前清除滚动监听,
