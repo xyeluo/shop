@@ -26,4 +26,7 @@ img {
   font-size: $size;
   line-height: $lh;
 }
+.radius12 {
+  border-radius: 12px;
+}
 </style>

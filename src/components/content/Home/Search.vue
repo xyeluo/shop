@@ -157,6 +157,7 @@ export default {
         bottom: -80px;
         background: #fff;
         display: none;
+        z-index: 10;
         li:hover {
           color: #ff5000;
         }

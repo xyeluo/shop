@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5135",
+      "name": "数码手机",
+      "font_class": "shumashouji",
+      "unicode": "3457",
+      "unicode_decimal": 13399
+    },
+    {
+      "icon_id": "259480",
+      "name": "女装",
+      "font_class": "nvzhuang",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1048427",
+      "name": "男装类目",
+      "font_class": "nanzhuangleimu",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "1086204",
+      "name": "首页食品",
+      "font_class": "shouyeshipin",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
       "icon_id": "2076277",
       "name": " 店铺",
       "font_class": "dianpu",
@@ -27,11 +55,32 @@
       "unicode_decimal": 60283
     },
     {
+      "icon_id": "5735734",
+      "name": "家具-5",
+      "font_class": "jiaju-",
+      "unicode": "e821",
+      "unicode_decimal": 59425
+    },
+    {
       "icon_id": "7629077",
       "name": "手提包",
       "font_class": "shoutibao",
       "unicode": "e6bc",
       "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "7797413",
+      "name": "美妆-喷雾器",
+      "font_class": "huabanfuben",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "9748095",
+      "name": "医疗",
+      "font_class": "yiliao",
+      "unicode": "e646",
+      "unicode_decimal": 58950
     },
     {
       "icon_id": "11372701",
@@ -46,6 +95,13 @@
       "font_class": "shoucang1",
       "unicode": "e8c6",
       "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "15904310",
+      "name": "鞋子",
+      "font_class": "xiezi",
+      "unicode": "e7d6",
+      "unicode_decimal": 59350
     },
     {
       "icon_id": "16161081",
