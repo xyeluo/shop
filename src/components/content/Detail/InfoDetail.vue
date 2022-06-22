@@ -51,23 +51,13 @@
       <div class="cartWrap">
         <div class="controls com-flex">
           <span>数&emsp;&ensp;量</span>
-          <a
-            href="javascript:"
-            class="mins"
-            @click="skuNum > 1 ? skuNum-- : (skuNum = 1)"
-            >-</a
-          >
+          <a href="javascript:" class="mins" @click="sub">-</a>
 
-          <input
-            autocomplete="off"
-            class="itxt"
-            @change="changeSkuNum"
-            v-model="skuNum"
-          />
-          <a href="javascript:" class="plus" @click="skuNum++">+</a>&emsp;件
+          <input autocomplete="off" class="itxt" disabled v-model="skuNum" />
+          <a href="javascript:" class="plus" @click="add">+</a>&emsp;件
         </div>
         <div class="add com-mouse-point">
-          <a>加入购物车</a>
+          <a class="addCart" @click="addCart">加入购物车</a>
         </div>
       </div>
     </div>
@@ -75,6 +65,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'InfoDetail',
   props: {
@@ -90,16 +81,20 @@ export default {
     }
   },
   methods: {
-    changeSkuNum () {
-      // 非数字*1都为NaN
-      const value = this.skuNum * 1
-      // 如果用户输入的非法  出现NaN或用户输入<1的数字
-      if (isNaN(value) || value < 1) {
+    ...mapMutations(['addProd']),
+    sub () {
+      if (this.skuNum <= 1) {
         this.skuNum = 1
-      } else {
-        // 用户输入的合法(>1)但是带小数
-        this.skuNum = parseInt(value)
+        return
       }
+      this.skuNum--
+    },
+    add () {
+      this.skuNum++
+    },
+    addCart () {
+      this.addProd(this.info, this.skuNum)
+      this.$router.push({ name: 'shopping' })
     }
   }
 }
@@ -153,8 +148,9 @@ export default {
           font-size: 12px;
         }
       }
-      .remark{
-        em,i{
+      .remark {
+        em,
+        i {
           text-align: center;
           display: block;
           line-height: 13px;

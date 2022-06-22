@@ -37,8 +37,7 @@ const routes = [
   {
     path: '/detail',
     name: 'detail',
-    component: () => import('@/views/Detail.vue'),
-    props: true
+    component: () => import('@/views/Detail.vue')
   },
   // 购物车页面
   {

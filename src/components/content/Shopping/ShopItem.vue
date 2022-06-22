@@ -15,7 +15,7 @@
     <div class="th th-price"><span>&yen;</span>{{ shopItem.price }}</div>
     <div class="th th-amount com-flex-center">
       <span class="sub" @click="sub">-</span
-      ><input type="number" v-model="shopItem.num" disabled/><span
+      ><input type="number" v-model="shopItem.num" disabled /><span
         class="add"
         @click="add"
         >+</span
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'ShopItem',
   data () {
@@ -42,15 +43,23 @@ export default {
   },
   computed: {
     total () {
-      return this.shopItem.num * this.shopItem.price
+      const result = this.shopItem.num * this.shopItem.price
+      return result.toFixed(2)
     }
   },
   methods: {
+    ...mapMutations(['addProd', 'subProd']),
     sub () {
-      this.shopItem.num > 1 ? this.shopItem.num-- : (this.shopItem.num = 1)
+      if (this.shopItem.num <= 1) {
+        this.shopItem.num = 1
+        return
+      }
+      this.subProd(this.shopItem.id, this.shopItem)
+      // this.shopItem.num--;
     },
     add () {
-      this.shopItem.num++
+      this.addProd(this.shopItem)
+      // this.shopItem.num++;
     }
   },
   beforeMount () {
@@ -71,9 +80,6 @@ export default {
   border-radius: 18px;
   padding: 20px;
   box-sizing: border-box;
-  .th {
-    // height: 119px;
-  }
   .th-chk {
     input {
       margin-top: -50%;
@@ -122,14 +128,6 @@ export default {
       color: #343434;
       text-align: center;
       outline: none;
-      //谷歌
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
-
-      //火狐
-      -moz-appearance: textfield;
     }
     .sub:hover,
     .add:hover {

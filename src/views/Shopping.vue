@@ -8,16 +8,19 @@
         <div class="cart-sum">
           <span>已选商品（不包含运费）</span>
           <strong><em>&nbsp;&yen;</em>0.00</strong>
-          <a href="javascript:void(0);" :class="{active:isSelected}">结&nbsp;算</a>
+          <a href="javascript:void(0);" :class="{ active: isSelected }"
+            >结&nbsp;算</a
+          >
         </div>
       </div>
       <div class="cartmain">
         <div class="cart-table-th com-flex">
           <div class="th th-chk">
-            <input id="J_SelectAllCbx1" type="checkbox" v-model="isSelected"/><label
-              for="J_SelectAllCbx1"
-              >全选</label
-            >
+            <input
+              id="J_SelectAllCbx1"
+              type="checkbox"
+              v-model="isSelected"
+            /><label for="J_SelectAllCbx1">全选</label>
           </div>
           <div class="th th-info">商品信息</div>
           <div class="th th-price">单价</div>
@@ -40,44 +43,13 @@
 
 <script>
 import ShopItem from '@cpts/Shopping/ShopItem.vue'
+import { mapState } from 'vuex'
 export default {
   name: 'ShoppingVue',
   data () {
     return {
       isSelected: false,
-      isHome: false,
-      shopItems: [
-        {
-          id: 1,
-          ishot: false,
-          img: '/shopImgs/pic_001.jpeg',
-          content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
-          price: '899',
-          num: 1,
-          detail: [
-            '/shopImgs/pic_001.jpeg',
-            '/shopImgs/pic_014.jpeg',
-            '/shopImgs/pic_015.jpeg',
-            '/shopImgs/pic_016.jpeg',
-            '/shopImgs/pic_017.jpeg'
-          ]
-        },
-        {
-          id: 2,
-          ishot: false,
-          img: '/shopImgs/pic_001.jpeg',
-          content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
-          price: '879',
-          num: 1,
-          detail: [
-            '/shopImgs/pic_001.jpeg',
-            '/shopImgs/pic_014.jpeg',
-            '/shopImgs/pic_015.jpeg',
-            '/shopImgs/pic_016.jpeg',
-            '/shopImgs/pic_017.jpeg'
-          ]
-        }
-      ]
+      isHome: false
     }
   },
   components: {
@@ -87,6 +59,9 @@ export default {
     isSelected (n, o) {
       console.log(n)
     }
+  },
+  computed: {
+    ...mapState(['shopItems'])
   }
 }
 </script>
@@ -132,7 +107,7 @@ export default {
       margin-right: 12px;
     }
     a {
-      $h:42px;
+      $h: 42px;
       display: inline-block;
       text-align: center;
       line-height: $h;
@@ -143,7 +118,7 @@ export default {
       border-radius: 21px;
       cursor: not-allowed;
     }
-    .active{
+    .active {
       background-color: #f50;
     }
   }

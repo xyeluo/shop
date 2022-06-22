@@ -7,11 +7,11 @@
       <!-- 左侧放大镜区域 -->
       <div class="previewWrap">
         <!--放大镜效果-->
-        <Zoom :ImgSrc="info.img" />
+        <Zoom :ImgSrc="currentItem.img" />
         <!-- 小图列表 -->
-        <ImgList :ImgList="info.detail"/>
+        <ImgList :ImgList="currentItem.detail" />
       </div>
-      <InfoDetail :info="info"></InfoDetail>
+      <InfoDetail :info="currentItem"></InfoDetail>
     </div>
   </div>
 </template>
@@ -20,6 +20,7 @@
 import Zoom from '@cpts/Detail/Zoom.vue'
 import ImgList from '@cpts/Detail/ImgList.vue'
 import InfoDetail from '@cpts/Detail/InfoDetail.vue'
+import { mapState } from 'vuex'
 export default {
   name: 'DetailPrd',
   data () {
@@ -29,14 +30,15 @@ export default {
       skuNum: 1
     }
   },
-  props: {
-    info: {
-      type: Object,
-      default: () => {}
-    }
+  computed: {
+    ...mapState(['currentItem'])
   },
   mounted () {
-    document.title = this.info.content
+    document.title = this.currentItem.content
+    // 当前商品为空，跳装到首页
+    if (Object.keys(this.currentItem).length === 0) {
+      this.$router.push({ name: 'home' })
+    }
   },
   components: {
     Zoom,
@@ -54,7 +56,7 @@ export default {
   border: 1px solid #e8e8e8;
   justify-content: space-between;
 }
-.mask{
+.mask {
   z-index: 10;
   top: -8px;
   right: 15px;
@@ -62,6 +64,5 @@ export default {
   height: 21px;
   text-align: center;
   background-color: #fff;
-
 }
 </style>

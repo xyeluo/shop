@@ -40,7 +40,7 @@ import PodItem from '@cpts/Home/PodItem.vue'
 import SideBar from '@cpts/Home/SideBar.vue'
 
 import { getProdInfo } from '@/request/index.js'
-
+import { mapMutations } from 'vuex'
 export default {
   name: 'HomeView',
   data () {
@@ -64,6 +64,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(['setCurrent']),
     showBackTop () {
       const scrollTop =
         window.pageYOffset ||
@@ -72,14 +73,11 @@ export default {
       scrollTop > this.offsetTo ? (this.showBT = true) : (this.showBT = false)
     },
     goToDetail (info) {
+      this.setCurrent(info)
       this.$router.push({
-        name: 'detail',
-        params: {
-          info
-        }
+        name: 'detail'
       })
     }
-
   },
   components: {
     NewService,

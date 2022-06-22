@@ -35,4 +35,14 @@ img {
   border-radius: 12px;
   overflow: hidden;
 }
+input {
+  //谷歌
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  //火狐
+  -moz-appearance: textfield;
+}
 </style>
