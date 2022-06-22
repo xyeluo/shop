@@ -2,14 +2,42 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import HomeView from '@/views/Home.vue'
+import EnterIndex from '@/views/EnterIndex.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+
   {
-    path: '/',
+    path: '/enter',
+    name: 'enter',
+    component: EnterIndex,
+    redirect: {
+      name: 'pwdlogin'
+    },
+    children: [
+      {
+        path: '/enter/pwdlogin',
+        name: 'pwdlogin',
+        component: () => import('@cpts/EnterIndex/PwdLogin.vue')
+      },
+      {
+        path: '/enter/notelogin',
+        name: 'notelogin',
+        component: () => import('@cpts/EnterIndex/NoteLogin.vue')
+      }
+    ]
+  },
+  {
+    path: '/home',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '*',
+    redirect: {
+      name: 'enter'
+    }
   }
 ]
 

@@ -18,6 +18,10 @@ body #shop {
   width: 1190px;
   min-width: 1190px;
 }
+.enter-width{
+  width: 1200px;
+  min-width: 1200px;
+}
 img {
   width: 100%;
 }

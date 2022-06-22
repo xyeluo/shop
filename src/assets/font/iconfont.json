@@ -13,11 +13,25 @@
       "unicode_decimal": 983091
     },
     {
+      "icon_id": "5027",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "3448",
+      "unicode_decimal": 13384
+    },
+    {
       "icon_id": "5135",
       "name": "数码手机",
       "font_class": "shumashouji",
       "unicode": "3457",
       "unicode_decimal": 13399
+    },
+    {
+      "icon_id": "15373",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e648",
+      "unicode_decimal": 58952
     },
     {
       "icon_id": "259480",
@@ -34,11 +48,32 @@
       "unicode_decimal": 58887
     },
     {
+      "icon_id": "996756",
+      "name": "对话框",
+      "font_class": "ai42",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
       "icon_id": "1048427",
       "name": "男装类目",
       "font_class": "nanzhuangleimu",
       "unicode": "e6f6",
       "unicode_decimal": 59126
+    },
+    {
+      "icon_id": "1330571",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e73c",
+      "unicode_decimal": 59196
+    },
+    {
+      "icon_id": "1758589",
+      "name": "验证码",
+      "font_class": "yanzhengma",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
     },
     {
       "icon_id": "2076277",
@@ -90,6 +125,13 @@
       "unicode_decimal": 59068
     },
     {
+      "icon_id": "7762181",
+      "name": "密码",
+      "font_class": "ziyuanxhdpi",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
       "icon_id": "7797413",
       "name": "美妆-喷雾器",
       "font_class": "huabanfuben",
@@ -130,6 +172,13 @@
       "font_class": "xiezi",
       "unicode": "e7d6",
       "unicode_decimal": 59350
+    },
+    {
+      "icon_id": "15933089",
+      "name": "支付宝",
+      "font_class": "zhifubao",
+      "unicode": "e608",
+      "unicode_decimal": 58888
     },
     {
       "icon_id": "16161081",
