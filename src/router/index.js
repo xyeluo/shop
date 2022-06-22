@@ -36,7 +36,7 @@ const routes = [
   {
     path: '*',
     redirect: {
-      name: 'enter'
+      name: 'home'
     }
   }
 ]

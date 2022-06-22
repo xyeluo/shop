@@ -24,7 +24,7 @@
               >短信登录</router-link
             >
           </div>
-          <form id="loginContent">
+          <form id="loginContent" onsubmit="return false;">
             <keep-alive :include="['pwdlogin', 'notelogin']">
               <router-view></router-view>
             </keep-alive>
@@ -97,20 +97,83 @@ export default {
         margin-bottom: 20px;
         margin-top: 4px;
         color: #3c3c3c;
-        font-size: 16px;
-        font-weight: 700;
+
         a {
           display: inline-block;
           margin-right: 9px;
+          font: 700 16px "Microsoft Yahei";
         }
         .active {
           border-bottom: 2px solid #000;
         }
       }
-      #loginContent {
-        width: 100%;
-        height: 100px;
+    }
+  }
+}
+</style>
+<style lang="scss">
+@mixin wh($w, $h: $w) {
+  width: $w;
+  height: $h;
+  line-height: $h;
+}
+.form-content {
+  width: 100%;
+  .item {
+    $wh: 40px;
+    display: flex;
+    line-height: $wh;
+    border-radius: 3px;
+    overflow: hidden;
+    label {
+      // display: inline-block;
+      @include wh($wh);
+      text-align: center;
+      background-color: #ccc;
+      color: #fff;
+      .iconfont {
+        font-size: 24px;
       }
+    }
+    input {
+      flex: 1;
+      border: 0;
+      outline: none;
+      text-indent: 10px;
+    }
+    margin-bottom: 20px;
+    .btn {
+      flex: 1;
+      text-align: center;
+      background: #f40;
+      border-color: #f40;
+      color: #fff;
+      a {
+        display: inline-block;
+
+        @include wh(100%, $wh);
+        line-height: $wh;
+      }
+      font: 400 16px "Microsoft Yahei";
+    }
+    .other-one {
+      margin-right: 6px;
+      i {
+        margin-right: -2px;
+        vertical-align: middle;
+      }
+      .icon-weibo {
+        color: #e52425;
+      }
+      .icon-zhifubao {
+        color: #1ba9ee;
+      }
+      color: #6c6c6c;
+    }
+    &.last{
+      margin-top: -19px;
+      margin-bottom: 0;
+      margin-left: 120px;
     }
   }
 }

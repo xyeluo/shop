@@ -1,24 +1,24 @@
 {
   "services": [
-    { "class": "red", "href": "", "msg": "天猫" },
-    { "class": "red", "href": "", "msg": "聚划算" },
-    { "class": "lightgreen", "href": "", "msg": "聚划算" },
-    { "class": "", "href": "", "msg": "聚划算" },
-    { "class": "", "href": "", "msg": "聚划算" },
-    { "class": "", "href": "", "msg": "聚划算" },
-    { "class": "", "href": "", "msg": "聚划算" },
-    { "class": "spannone", "href": "", "msg": "聚划算" }
+    { "class": "red", "href": "https://www.tmall.com/?spm=a21bo.jianhua.201859.1.576011d9Zkt6ZL", "msg": "天猫" },
+    { "class": "red", "href": "https://pages.tmall.com/wow/a/act/ju/dailygroup/2199/wupr?wh_pid=daily-222239&bid=7&spm=a21bo.jianhua.201859.2.576011d9Zkt6ZL", "msg": "聚划算" },
+    { "class": "lightgreen", "href": "https://chaoshi.tmall.com/?spm=a21bo.jianhua.201859.3.576011d9Zkt6ZL", "msg": "天猫超市" },
+    { "class": "", "href": "https://chaoshi.tmall.com/?spm=a21bo.jianhua.201859.3.576011d9Zkt6ZL", "msg": "司法拍卖" },
+    { "class": "", "href": "https://www.fliggy.com/?spm=a21bo.jianhua.201859.5.576011d9Zkt6ZL", "msg": "飞猪旅行" },
+    { "class": "", "href": "https://pages.tmall.com/wow/a/act/tiantian/dailygroup/2391/wupr?spm=a21bo.jianhua.201859.6.576011d9Zkt6ZL&wh_pid=daily-231043", "msg": "天天特卖" },
+    { "class": "", "href": "https://www.jiyoujia.com/?spm=a21bo.jianhua.201859.7.576011d9Zkt6ZL", "msg": "极有家" },
+    { "class": "spannone", "href": "https://taolive.taobao.com/explore/index.html?spm=a21bo.jianhua.201859.8.576011d9Zkt6ZL&isEntertainment=true", "msg": "淘宝直播" }
   ],
   "userContents": [
     { "class": "icon-shoucang", "msg": "宝贝收藏" },
-    { "class": "icon-shoutibao", "msg": "宝贝收藏" },
-    { "class": "icon-dianpu", "msg": "宝贝收藏" },
-    { "class": "icon-lishijilu_o", "msg": "宝贝收藏" }
+    { "class": "icon-shoutibao", "msg": "买过的店" },
+    { "class": "icon-dianpu", "msg": "收藏的店" },
+    { "class": "icon-lishijilu_o", "msg": "我的足迹" }
   ],
   "tips": [
+    { "title": "规则", "msg": "淘宝平台打击流量造假、黑公关、网络水军公告" },
     { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
-    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
-    { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" },
+    { "title": "规则", "msg": "疫情场景淘宝卖家指导手册" },
     { "title": "规则", "msg": "淘宝网疫情影响地区发货时间要求调整公告" }
   ]
 }

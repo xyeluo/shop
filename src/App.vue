@@ -1,6 +1,7 @@
 <template>
   <div id="shop">
     <router-view></router-view>
+    <FooterVue></FooterVue>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ body #shop {
   width: 1190px;
   min-width: 1190px;
 }
-.enter-width{
+.enter-width {
   width: 1200px;
   min-width: 1200px;
 }

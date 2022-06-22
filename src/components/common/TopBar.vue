@@ -16,8 +16,10 @@
           </div>
         </li>
         <li class="topbar-color-change">
-          <a href="" class="color">亲，请登录</a>
-          <a href="">免费注册</a>
+          <router-link :to="{ name: 'enter' }" class="color"
+            >亲，请登录</router-link
+          >
+          <router-link :to="{ name: 'enter' }">免费注册</router-link>
         </li>
         <li class="topbar-color-change"><a href="">手机逛淘宝</a></li>
         <li class="topbar-color-change"><a href="">网页无障碍</a></li>

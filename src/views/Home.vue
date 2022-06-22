@@ -29,7 +29,6 @@
       </div>
     </div>
     <SideBar :backTop="showBT"></SideBar>
-    <FooterVue></FooterVue>
   </div>
 </template>
 
@@ -46,7 +45,18 @@ export default {
   name: 'HomeView',
   data () {
     return {
-      searchHot: ['新款连衣裙', '四件套', '潮流T恤', '时尚女鞋'],
+      searchHot: [
+        '新款连衣裙',
+        '四件套',
+        '潮流T恤',
+        '时尚女鞋',
+        '短裤',
+        '半身裙',
+        '男士外套',
+        '墙纸',
+        '行车记录仪',
+        '新款男鞋'
+      ],
       prodInfo: [],
       offsetTo: '',
       showBT: false
@@ -92,17 +102,19 @@ $t: ".home";
 #{$t} {
   width: 100%;
   background-color: #e8e2e0;
+  overflow: hidden;
   #{$t}-content {
     background: #fff;
-    border-radius: 18px 18px 0 0;
+    border-radius: 18px;
     position: relative;
     box-sizing: border-box;
     padding: 24px;
+    margin-bottom: 20px;
   }
 }
 .search-hot {
   top: -30px;
-  transform: translateX(-145%);
+  transform: translateX(-60%);
   li {
     width: 60px;
     height: 40px;
