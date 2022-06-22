@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import HomeView from '@/views/Home.vue'
-import EnterIndex from '@/views/EnterIndex.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +16,7 @@ const routes = [
   {
     path: '/enter',
     name: 'enter',
-    component: EnterIndex,
+    component: () => import('@/views/EnterIndex.vue'),
     redirect: {
       name: 'pwdlogin'
     },

@@ -3,7 +3,14 @@
     "ishot": false,
     "img": "/shopImgs/pic_001.jpeg",
     "content": "正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋",
-    "price": "899"
+    "price": "899",
+    "detail": [
+      "/shopImgs/pic_001.jpeg",
+      "/shopImgs/pic_014.jpeg",
+      "/shopImgs/pic_015.jpeg",
+      "/shopImgs/pic_016.jpeg",
+      "/shopImgs/pic_017.jpeg"
+    ]
   },
   {
     "ishot": false,
