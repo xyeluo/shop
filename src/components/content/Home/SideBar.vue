@@ -18,11 +18,10 @@ export default {
     backTop: {
       type: Boolean,
       default: () => false
-    }
-  },
-  data () {
-    return {
-      sidebar: [
+    },
+    sidebar: {
+      type: Array,
+      default: () => [
         { img: require('@images/pic_022.png'), msg: '消息' },
         { img: require('@images/pic_023.png'), msg: '官方客服' },
         { img: require('@images/pic_024.png'), msg: '反馈' },
@@ -77,6 +76,6 @@ export default {
   text-align: center;
   padding: 15px 0;
   border-radius: 18px 0 0 18px;
-  box-shadow: -2px 0 30px 2px rgb(97 105 119 / 18%);
+  box-shadow: -3px 0 30px 3px rgb(0 0 0 / 25%);
 }
 </style>

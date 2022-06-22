@@ -4,11 +4,18 @@
     <SearchHome :isHome="isHome"></SearchHome>
     <div class="content home-width com-margin-center">
       <div class="hd com-flex">
-        <span class="car">购物车</span>
+        <span class="car"
+          >购物车<span v-show="shopItems.length !== 0"
+            >&nbsp;（全部{{ shopItems.length }}）</span
+          ></span
+        >
         <div class="cart-sum">
           <span>已选商品（不包含运费）</span>
           <strong><em>&nbsp;&yen;</em>{{ allShop }}</strong>
-          <a href="javascript:void(0);" :class="{ active: isActive }"
+          <a
+            href="javascript:void(0);"
+            @click="deleteMultipe"
+            :class="{ active: isActive }"
             >结&nbsp;算</a
           >
         </div>
@@ -20,6 +27,7 @@
               id="J_SelectAllCbx1"
               type="checkbox"
               v-model="isAllSelected"
+              v-show="shopItems.length !== 0"
             /><label for="J_SelectAllCbx1">全选</label>
           </div>
           <div class="th th-info">商品信息</div>
@@ -38,11 +46,15 @@
       </div>
       <div class="ft"></div>
     </div>
+    <SideBar
+      :sidebar="[{ img: require('@images/pic_024.png'), msg: '反馈' }]"
+    ></SideBar>
   </div>
 </template>
 
 <script>
 import ShopItem from '@cpts/Shopping/ShopItem.vue'
+import SideBar from '@cpts/Home/SideBar.vue'
 import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'ShoppingVue',
@@ -54,7 +66,8 @@ export default {
     }
   },
   components: {
-    ShopItem
+    ShopItem,
+    SideBar
   },
   computed: {
     ...mapState(['shopItems']),
@@ -62,7 +75,7 @@ export default {
       get () {
         return this.$store.state.isAllSelected
       },
-      set (val) {
+      set () {
         this.allChecked()
       }
     }
@@ -75,9 +88,10 @@ export default {
         let sum = 0
         for (const item of n) {
           const temp = item.price * item.num
+          // temp=temp.toFixed(2);
           sum += temp
         }
-        this.allShop = sum
+        this.allShop = sum.toFixed(2)
         for (const item of n) {
           if (item.isSelected) {
             this.isActive = true
@@ -89,7 +103,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['allChecked'])
+    ...mapMutations(['allChecked', 'deleteMultipe'])
   }
 }
 </script>
@@ -148,6 +162,7 @@ export default {
     }
     .active {
       background-color: #f50;
+      cursor: pointer;
     }
   }
 }

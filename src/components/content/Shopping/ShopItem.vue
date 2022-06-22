@@ -27,7 +27,7 @@
       >
     </div>
     <div class="th th-sum"><span>&yen;</span>{{ total }}</div>
-    <div class="th th-op"><span>删除</span></div>
+    <div class="th th-op"><span @click="deleteOne(shopItem.id)">删除</span></div>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['addProd', 'subProd', 'checked']),
+    ...mapMutations(['addProd', 'subProd', 'checked', 'deleteOne']),
     sub () {
       if (this.shopItem.num <= 1) {
         this.shopItem.num = 1
