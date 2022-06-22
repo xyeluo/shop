@@ -7,14 +7,14 @@
         <span class="car">购物车</span>
         <div class="cart-sum">
           <span>已选商品（不包含运费）</span>
-          <strong> <em>&nbsp;&yen;</em>0.00</strong>
-          <a href="javascript:void(0);">结&nbsp;算</a>
+          <strong><em>&nbsp;&yen;</em>0.00</strong>
+          <a href="javascript:void(0);" :class="{active:isSelected}">结&nbsp;算</a>
         </div>
       </div>
       <div class="cartmain">
         <div class="cart-table-th com-flex">
           <div class="th th-chk">
-            <input id="J_SelectAllCbx1" type="checkbox" /><label
+            <input id="J_SelectAllCbx1" type="checkbox" v-model="isSelected"/><label
               for="J_SelectAllCbx1"
               >全选</label
             >
@@ -29,7 +29,7 @@
           <ShopItem
             v-for="(item, index) in shopItems"
             :key="index"
-            :shopItem="item"
+            :shopIt="item"
           ></ShopItem>
         </div>
       </div>
@@ -44,6 +44,7 @@ export default {
   name: 'ShoppingVue',
   data () {
     return {
+      isSelected: false,
       isHome: false,
       shopItems: [
         {
@@ -53,7 +54,6 @@ export default {
           content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
           price: '899',
           num: 1,
-          total: '899',
           detail: [
             '/shopImgs/pic_001.jpeg',
             '/shopImgs/pic_014.jpeg',
@@ -63,11 +63,11 @@ export default {
           ]
         },
         {
-          id: 1,
+          id: 2,
           ishot: false,
           img: '/shopImgs/pic_001.jpeg',
           content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
-          price: '899',
+          price: '879',
           num: 1,
           detail: [
             '/shopImgs/pic_001.jpeg',
@@ -82,6 +82,11 @@ export default {
   },
   components: {
     ShopItem
+  },
+  watch: {
+    isSelected (n, o) {
+      console.log(n)
+    }
   }
 }
 </script>
@@ -118,6 +123,29 @@ export default {
     color: #000;
     font-size: 18px;
     font-weight: 600;
+  }
+  .cart-sum {
+    strong {
+      font-size: 22px;
+      font-weight: 700;
+      color: #f50;
+      margin-right: 12px;
+    }
+    a {
+      $h:42px;
+      display: inline-block;
+      text-align: center;
+      line-height: $h;
+      @include wh(74px, $h);
+      background: #aaa;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 21px;
+      cursor: not-allowed;
+    }
+    .active{
+      background-color: #f50;
+    }
   }
 }
 .cartmain {
