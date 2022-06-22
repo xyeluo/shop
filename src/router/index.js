@@ -50,7 +50,7 @@ const routes = [
     // 匹配不到的页面都会重定向到首页
     path: '*',
     redirect: {
-      name: 'shopping'
+      name: 'home'
     }
   }
 ]
