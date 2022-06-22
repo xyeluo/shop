@@ -25,6 +25,13 @@
         <li class="topbar-color-change"><a href="">网页无障碍</a></li>
       </ul>
       <ul class="right com-flex-center com-mouse-point">
+        <li class="topbar-color-change" v-show="!isHome">
+          <div class="taopbar-bd-hd">
+            <router-link tag="span" :to="{ name: 'home' }"
+              >淘宝网首页</router-link
+            >
+          </div>
+        </li>
         <li class="topbar-bd-change">
           <div class="topbar-bd-hd">
             <span>我的淘宝</span>
@@ -106,6 +113,12 @@ export default {
     getTopBar().then((res) => {
       this.menus = res
     })
+  },
+  props: {
+    isHome: {
+      type: Boolean,
+      default: () => true
+    }
   }
 }
 </script>

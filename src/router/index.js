@@ -7,7 +7,13 @@ import EnterIndex from '@/views/EnterIndex.vue'
 Vue.use(VueRouter)
 
 const routes = [
-
+  // 首页
+  {
+    path: '/home',
+    name: 'home',
+    component: HomeView
+  },
+  // 登录
   {
     path: '/enter',
     name: 'enter',
@@ -29,14 +35,14 @@ const routes = [
     ]
   },
   {
-    path: '/home',
-    name: 'home',
-    component: HomeView
+    path: '/detail',
+    name: 'detail',
+    component: () => import('@/views/Detail.vue')
   },
   {
     path: '*',
     redirect: {
-      name: 'home'
+      name: 'detail'
     }
   }
 ]

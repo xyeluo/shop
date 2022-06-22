@@ -29,7 +29,7 @@
             </form>
           </div>
         </div>
-        <div class="tbh-qr-wrapper com-absolute">
+        <div class="tbh-qr-wrapper com-absolute" v-show="isHome">
           <a
             href="https://market.m.taobao.com/app/fdilab/download-page/main/index.html"
             class="qr-bd"
@@ -46,7 +46,12 @@
 <script>
 export default {
   name: 'SearchHome',
-
+  props: {
+    isHome: {
+      type: Boolean,
+      default: () => true
+    }
+  },
   data () {
     return {
       isTop: false,

@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import SearchHome from '@cpts/Home/Search.vue'
 import NewService from '@cpts/Home/Menu/NewService.vue'
 import MainService from '@cpts/Home/Menu/MainService.vue'
 import PodItem from '@cpts/Home/PodItem.vue'
@@ -45,6 +44,7 @@ export default {
   name: 'HomeView',
   data () {
     return {
+      isHome: true,
       searchHot: [
         '新款连衣裙',
         '四件套',
@@ -72,7 +72,6 @@ export default {
     }
   },
   components: {
-    SearchHome,
     NewService,
     MainService,
     PodItem,
