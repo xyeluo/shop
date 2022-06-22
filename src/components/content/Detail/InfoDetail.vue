@@ -1,8 +1,8 @@
 <template>
-  <div class="InfoWrap">
+  <div class="InfoWrap com-mouse-default">
     <div class="goodsDetail">
       <h3 class="InfoName">
-        {{ skuInfo.content }}
+        {{ info.content }}
       </h3>
       <p class="news">
         {{ skuDesc }}
@@ -13,13 +13,13 @@
             <div class="title">价&emsp;&ensp;格</div>
             <div class="price">
               <i>¥</i>
-              <em>{{ skuInfo.price }}</em>
+              <em>{{ info.price }}</em>
               <span>降价通知</span>
             </div>
           </div>
           <div class="remark">
-            <i>月销量</i>
             <em>768</em>
+            <i>月销量</i>
           </div>
         </div>
         <div class="priceArea2">
@@ -37,11 +37,11 @@
       <div class="support">
         <div class="supportArea">
           <div class="title">支&emsp;&ensp;持</div>
-          <div class="fixWidth">以旧换新，闲置手机回收 4G套餐超值抢 礼品购</div>
+          <div class="fixWidth">花呗分期，快递 免运费 礼品购</div>
         </div>
         <div class="supportArea">
           <div class="title">配 送 至</div>
-          <div class="fixWidth">广东省 深圳市 宝安区</div>
+          <div class="fixWidth">福建省 南平市 延平区区</div>
         </div>
       </div>
     </div>
@@ -64,10 +64,9 @@
             @change="changeSkuNum"
             v-model="skuNum"
           />
-          <a href="javascript:" class="plus" @click="skuNum++">+</a>
+          <a href="javascript:" class="plus" @click="skuNum++">+</a>&emsp;件
         </div>
-        <div class="add">
-          <!-- 以前的路由跳转都是直接跳，这里需要给服务器发参数，再跳 -->
+        <div class="add com-mouse-point">
           <a>加入购物车</a>
         </div>
       </div>
@@ -79,11 +78,9 @@
 export default {
   name: 'InfoDetail',
   props: {
-    skuInfo: {
+    info: {
       type: Object,
-      default: () => {
-        return {}
-      }
+      default: () => {}
     }
   },
   data () {
@@ -154,6 +151,14 @@ export default {
 
         span {
           font-size: 12px;
+        }
+      }
+      .remark{
+        em,i{
+          text-align: center;
+          display: block;
+          line-height: 13px;
+          height: 15px;
         }
       }
     }

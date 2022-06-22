@@ -3,14 +3,15 @@
     <TopBar :isHome="isHome"></TopBar>
     <SearchHome :isHome="isHome"></SearchHome>
     <div class="tb-item-info home-width com-margin-center com-flex">
+      <p class="mask com-absolute com-mouse-point">举报</p>
       <!-- 左侧放大镜区域 -->
       <div class="previewWrap">
         <!--放大镜效果-->
-        <Zoom :ImgSrc="skuInfo.img" />
+        <Zoom :ImgSrc="info.img" />
         <!-- 小图列表 -->
-        <ImgList :ImgList="skuInfo.detail"/>
+        <ImgList :ImgList="info.detail"/>
       </div>
-      <InfoDetail :skuInfo="skuInfo"></InfoDetail>
+      <InfoDetail :info="info"></InfoDetail>
     </div>
   </div>
 </template>
@@ -25,31 +26,18 @@ export default {
     return {
       isHome: false,
       skuId: undefined,
-      skuNum: 1,
-      skuInfo: {
-        ishot: false,
-        img: '/shopImgs/pic_001.jpeg',
-        content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
-        price: '899',
-        detail: [
-          '/shopImgs/pic_001.jpeg',
-          '/shopImgs/pic_014.jpeg',
-          '/shopImgs/pic_015.jpeg',
-          '/shopImgs/pic_016.jpeg',
-          '/shopImgs/pic_017.jpeg'
-        ]
-      }
+      skuNum: 1
     }
   },
-  // props: {
-  //   skuInfo: {
-  //     type: Object,
-  //     default: () => {
-  //       return {};
-  //     },
-  //   },
-  // },
-
+  props: {
+    info: {
+      type: Object,
+      default: () => {}
+    }
+  },
+  mounted () {
+    document.title = this.info.content
+  },
   components: {
     Zoom,
     ImgList,
@@ -61,8 +49,19 @@ export default {
 <style lang="scss" scoped>
 .tb-item-info {
   padding: 20px;
+  position: relative;
   box-sizing: border-box;
   border: 1px solid #e8e8e8;
   justify-content: space-between;
+}
+.mask{
+  z-index: 10;
+  top: -8px;
+  right: 15px;
+  width: 30px;
+  height: 21px;
+  text-align: center;
+  background-color: #fff;
+
 }
 </style>

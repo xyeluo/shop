@@ -23,6 +23,7 @@
               v-for="(item, index) in prodInfo"
               :key="index"
               :info="item"
+              @click.native="goToDetail(item)"
             ></PodItem>
           </div>
         </div>
@@ -69,7 +70,16 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop
       scrollTop > this.offsetTo ? (this.showBT = true) : (this.showBT = false)
+    },
+    goToDetail (info) {
+      this.$router.push({
+        name: 'detail',
+        params: {
+          info
+        }
+      })
     }
+
   },
   components: {
     NewService,

@@ -1,6 +1,6 @@
 <template>
   <div class="poditem radius12">
-    <a href="" class="com-flex">
+    <a href="javascript:void(0);" class="com-flex">
       <div class="podImg"><img :src="info.img" /></div>
       <div class="podInfo">
         <div class="title">
@@ -38,7 +38,6 @@ export default {
   height: $h;
 }
 .poditem {
-  width: 370px;
   height: 174px;
   background-color: #f7f9fa;
   border: 1px solid #f7f9fa;

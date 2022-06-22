@@ -33,23 +33,45 @@ const routes = [
       }
     ]
   },
+  // 商品详情页
   {
     path: '/detail',
     name: 'detail',
-    component: () => import('@/views/Detail.vue')
+    component: () => import('@/views/Detail.vue'),
+    props: true
+  },
+  // 购物车页面
+  {
+    path: '/shopping',
+    name: 'shopping',
+    component: () => import('@/views/Shopping.vue'),
+    props: true
   },
   {
+    // 匹配不到的页面都会重定向到首页
     path: '*',
     redirect: {
-      name: 'detail'
+      name: 'home'
     }
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
+const originPush = VueRouter.prototype.push
+
+// 重写 push | replace
+// 第一个参数：跳转地址和参数
+VueRouter.prototype.push = function (location, resolve, reject) {
+  if (resolve && reject) {
+    originPush.call(this, location, resolve, reject)
+  } else {
+    originPush.call(this, location, () => { }, () => { })
+  }
+}
 
 export default router

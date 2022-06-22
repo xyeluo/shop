@@ -204,6 +204,9 @@ export default {
     .banner {
       position: relative;
       width: 564px;
+      img{
+        height: 331px;
+      }
     }
     .banner-prev,
     .banner-next,

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "ishot": false,
     "img": "/shopImgs/pic_001.jpeg",
     "content": "正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋",
@@ -13,63 +14,143 @@
     ]
   },
   {
+    "id": 2,
     "ishot": false,
     "img": "/shopImgs/pic_002.jpeg",
     "content": "日本进口缝隙收纳架厨房置物架冰箱夹缝车可移动多层落地超窄柜",
-    "price": "125"
+    "price": "125",
+    "detail": [
+      "/shopImgs/pic_002.jpeg",
+      "/shopImgs/bingxiang_pic001.jpg",
+      "/shopImgs/bingxiang_pic002.jpg",
+      "/shopImgs/bingxiang_pic003.jpg",
+      "/shopImgs/bingxiang_pic004.jpg"
+    ]
   },
   {
+    "id": 3,
     "ishot": true,
     "img": "/shopImgs/pic_003.png",
     "content": "ASRV休闲运动五分袖男圆领纯色宽松速干T恤oversize健身短袖半袖",
-    "price": "59.9"
+    "price": "59.9",
+    "detail": [
+      "/shopImgs/pic_003.png",
+      "/shopImgs/short_pic001.jpg",
+      "/shopImgs/short_pic002.jpg",
+      "/shopImgs/short_pic003.jpg",
+      "/shopImgs/short_pic004.jpg"
+    ]
   },
   {
+    "id": 4,
     "ishot": false,
     "img": "/shopImgs/pic_005.jpeg",
     "content": "结婚酒盅婚庆用品 大红色双喜 喜庆敬酒杯 交杯酒杯 陶瓷小号杯",
-    "price": "29.85"
+    "price": "29.85",
+    "detail": [
+      "/shopImgs/pic_005.jpeg",
+      "/shopImgs/glass_pic001.jpg",
+      "/shopImgs/glass_pic002.jpg",
+      "/shopImgs/glass_pic003.jpg",
+      "/shopImgs/glass_pic004.jpg"
+    ]
   },
   {
+    "id": 5,
     "ishot": true,
     "img": "/shopImgs/pic_006.jpeg",
     "content": "新中式盘扣衬衫女夏季新款灯笼袖衬衣",
-    "price": "179.9"
+    "price": "179.9",
+    "detail": [
+      "/shopImgs/pic_006.jpeg",
+      "/shopImgs/shirt_pic001.jpg",
+      "/shopImgs/shirt_pic002.jpg",
+      "/shopImgs/shirt_pic003.jpg",
+      "/shopImgs/shirt_pic004.jpg"
+    ]
   },
   {
+    "id": 6,
     "ishot": false,
     "img": "/shopImgs/pic_007.jpeg",
     "content": "特步板鞋男鞋2022夏季新款经典国潮小白鞋情侣百搭休闲鞋官方旗舰",
-    "price": "149"
+    "price": "149",
+    "detail": [
+      "/shopImgs/pic_007.jpeg",
+      "/shopImgs/wshoes_pic001.jpg",
+      "/shopImgs/wshoes_pic002.jpg",
+      "/shopImgs/wshoes_pic003.jpg",
+      "/shopImgs/wshoes_pic004.jpg"
+    ]
   },
   {
+    "id": 7,
     "ishot": false,
     "img": "/shopImgs/pic_008.jpeg",
     "content": "置物架不锈钢色储物架厨房五层落地可调节收纳架货架阳台多层架子",
-    "price": "94"
+    "price": "94",
+    "detail": [
+      "/shopImgs/pic_008.jpeg",
+      "/shopImgs/frame_pic001.jpg",
+      "/shopImgs/frame_pic002.jpg",
+      "/shopImgs/frame_pic003.jpg",
+      "/shopImgs/frame_pic004.jpg"
+    ]
   },
   {
+    "id": 8,
     "ishot": false,
     "img": "/shopImgs/pic_009.jpeg",
     "content": "创意个性纯色简约日式8-10寸螺纹陶瓷餐盘深盘菜盘西餐盘汤盘果盘",
-    "price": "26"
+    "price": "26",
+    "detail": [
+      "/shopImgs/pic_009.jpeg",
+      "/shopImgs/plate_pic001.jpg",
+      "/shopImgs/plate_pic002.jpg",
+      "/shopImgs/plate_pic003.jpg",
+      "/shopImgs/plate_pic004.jpg"
+    ]
   },
   {
+    "id": 9,
     "ishot": true,
     "img": "/shopImgs/pic_010.jpeg",
     "content": "OffbeatNancy复古蓝黑色绵羊T恤宽松日系卡通印花短袖古着感少女",
-    "price": "85"
+    "price": "85",
+    "detail": [
+      "/shopImgs/pic_010.jpeg",
+      "/shopImgs/T-shirt_pic001.jpg",
+      "/shopImgs/T-shirt_pic002.jpg",
+      "/shopImgs/T-shirt_pic003.jpg",
+      "/shopImgs/T-shirt_pic004.jpg"
+    ]
   },
   {
+    "id": 10,
     "ishot": false,
     "img": "/shopImgs/pic_011.jpeg",
     "content": "Adidas/阿迪达斯正品三叶草男女同款经典中帮运动休闲板鞋EE6536",
-    "price": "229"
+    "price": "229",
+    "detail": [
+      "/shopImgs/pic_011.jpeg",
+      "/shopImgs/pshoes_pic001.jpg",
+      "/shopImgs/pshoes_pic002.jpg",
+      "/shopImgs/pshoes_pic003.jpg",
+      "/shopImgs/pshoes_pic004.jpg"
+    ]
   },
   {
+    "id": 11,
     "ishot": false,
     "img": "/shopImgs/pic_013.gif",
     "content": "居家编织桌面收纳盒筐零食钥匙遥控器化妆品梳妆台杂物整理袋玄关",
-    "price": "10"
+    "price": "10",
+    "detail": [
+      "/shopImgs/pic_013.gif",
+      "/shopImgs/basket_pic001.jpg",
+      "/shopImgs/basket_pic002.jpg",
+      "/shopImgs/basket_pic003.jpg",
+      "/shopImgs/basket_pic004.jpg"
+    ]
   }
 ]

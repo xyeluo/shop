@@ -1,0 +1,170 @@
+<template>
+  <div class="shopping com-overflow-hidden">
+    <TopBar :isHome="isHome"></TopBar>
+    <SearchHome :isHome="isHome"></SearchHome>
+    <div class="content home-width com-margin-center">
+      <div class="hd com-flex">
+        <span class="car">购物车</span>
+        <div class="cart-sum">
+          <span>已选商品（不包含运费）</span>
+          <strong> <em>&nbsp;&yen;</em>0.00</strong>
+          <a href="javascript:void(0);">结&nbsp;算</a>
+        </div>
+      </div>
+      <div class="cartmain">
+        <div class="cart-table-th com-flex">
+          <div class="th th-chk">
+            <input id="J_SelectAllCbx1" type="checkbox" /><label
+              for="J_SelectAllCbx1"
+              >全选</label
+            >
+          </div>
+          <div class="th th-info">商品信息</div>
+          <div class="th th-price">单价</div>
+          <div class="th th-amount">数量</div>
+          <div class="th th-sum">金额</div>
+          <div class="th th-op">操作</div>
+        </div>
+        <div class="cart-list">
+          <ShopItem
+            v-for="(item, index) in shopItems"
+            :key="index"
+            :shopItem="item"
+          ></ShopItem>
+        </div>
+      </div>
+      <div class="ft"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+import ShopItem from '@cpts/Shopping/ShopItem.vue'
+export default {
+  name: 'ShoppingVue',
+  data () {
+    return {
+      isHome: false,
+      shopItems: [
+        {
+          id: 1,
+          ishot: false,
+          img: '/shopImgs/pic_001.jpeg',
+          content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
+          price: '899',
+          num: 1,
+          total: '899',
+          detail: [
+            '/shopImgs/pic_001.jpeg',
+            '/shopImgs/pic_014.jpeg',
+            '/shopImgs/pic_015.jpeg',
+            '/shopImgs/pic_016.jpeg',
+            '/shopImgs/pic_017.jpeg'
+          ]
+        },
+        {
+          id: 1,
+          ishot: false,
+          img: '/shopImgs/pic_001.jpeg',
+          content: '正品耐克Nike Air Force 1定制空军一号De Lo Mio鸳鸯男女板鞋',
+          price: '899',
+          num: 1,
+          detail: [
+            '/shopImgs/pic_001.jpeg',
+            '/shopImgs/pic_014.jpeg',
+            '/shopImgs/pic_015.jpeg',
+            '/shopImgs/pic_016.jpeg',
+            '/shopImgs/pic_017.jpeg'
+          ]
+        }
+      ]
+    }
+  },
+  components: {
+    ShopItem
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@mixin wh($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+.shopping {
+  width: 100vw;
+  background: repeat-y url("@images/pic_028.png");
+  background-size: cover;
+  .content {
+    height: 1000px;
+    background-color: #fff;
+    border-radius: 24px;
+    margin-bottom: 45px;
+    font-family: "Microsoft YaHei";
+  }
+}
+.hd,
+.cart-table-th {
+  padding: 0 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hd {
+  height: 72px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  .car {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+.cartmain {
+  user-select: none;
+  $h: 50px;
+  .cart-table-th {
+    padding: 0 25px;
+    height: $h;
+    margin-bottom: 15px;
+  }
+  .th {
+    height: 100%;
+    color: #3c3c3c;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: $h;
+  }
+}
+</style>
+<style lang="scss">
+.th {
+  flex: 1;
+}
+.th-chk {
+  flex: 1.2;
+  // width: 150px;
+  input,
+  label {
+    cursor: pointer;
+  }
+  input {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  label {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+  }
+}
+.th-info {
+  flex: 3;
+}
+.th-price,
+.th-amount,
+.th-sum,
+.th-op {
+  text-align: center;
+}
+</style>

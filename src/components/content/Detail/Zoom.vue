@@ -6,7 +6,7 @@
     <div class="event" @mousemove="handler"></div>
     <!-- 大图 -->
     <div class="big">
-      <img :src="ImgSrc" ref="big" />
+      <img :src="currentImg" ref="big" />
     </div>
     <!-- 蒙版 -->
     <div class="mask" ref="mask"></div>
@@ -33,7 +33,6 @@ export default {
     // 全局事件总线：获取兄弟组件传递过来的图片地址
     this.$bus.$on('getIndex', (src) => {
       // 修改当前响应式数据
-      console.log(src)
       this.currentImg = src
     })
   },
@@ -95,8 +94,8 @@ export default {
     height: 100%;
     position: absolute;
     top: -1px;
-    left: 100%;
-    border: 1px solid #aaa;
+    left: 105%;
+    // border: 1px solid #aaa;
     overflow: hidden;
     z-index: 998;
     display: none;

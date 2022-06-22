@@ -46,9 +46,9 @@
           </div>
         </li>
         <li class="topbar-color-change">
-          <a href=""
+          <router-link :to="{ name: 'shopping' }"
             ><span class="iconfont icon-gouwuche-tianchong color"></span
-            >购物车</a
+            >购物车</router-link
           >
         </li>
         <li class="topbar-bd-change">

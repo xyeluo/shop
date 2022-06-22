@@ -5,7 +5,7 @@
         <img
           :src="silde"
           :class="{ active: currentIndex == index }"
-          @mouseover="changeCurrentIndex(index)"
+          @mouseover="changeCurrentIndex(silde, index)"
         />
       </div>
     </div>
@@ -43,8 +43,10 @@ export default {
   },
   methods: {
     // 点击那张图片有背框颜色
-    changeCurrentIndex (index) {
+    changeCurrentIndex (src, index) {
+      console.log(this.ImgList)
       this.currentIndex = index
+      console.log(src)
       // 给zoom组件发索引值
       this.$bus.$emit('getIndex', this.ImgList[index])
     }
@@ -57,9 +59,9 @@ export default {
   height: 56px;
   width: 412px;
   box-sizing: border-box;
-  padding: 0 12px;
+  padding-right: 11px;
   .swiper-wrapper {
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .swiper-slide {
     width: 56px;
