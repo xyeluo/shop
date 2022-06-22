@@ -1,7 +1,12 @@
 <template>
   <div class="shopitem com-flex">
     <div class="th th-chk">
-      <input id="J_SelectAllCbx1" type="checkbox" />
+      <input
+        id="J_SelectAllCbx1"
+        @click="changeStatus"
+        type="checkbox"
+        v-model="shopItem.isSelected"
+      />
       <img :src="shopItem.img" />
     </div>
     <div class="th th-info">
@@ -48,7 +53,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['addProd', 'subProd']),
+    ...mapMutations(['addProd', 'subProd', 'checked']),
     sub () {
       if (this.shopItem.num <= 1) {
         this.shopItem.num = 1
@@ -60,6 +65,9 @@ export default {
     add () {
       this.addProd(this.shopItem)
       // this.shopItem.num++;
+    },
+    changeStatus () {
+      this.checked(this.shopItem)
     }
   },
   beforeMount () {

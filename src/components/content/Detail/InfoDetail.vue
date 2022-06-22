@@ -93,7 +93,8 @@ export default {
       this.skuNum++
     },
     addCart () {
-      this.addProd(this.info, this.skuNum)
+      this.$set(this.info, 'num', this.skuNum)
+      this.addProd(this.info)
       this.$router.push({ name: 'shopping' })
     }
   }

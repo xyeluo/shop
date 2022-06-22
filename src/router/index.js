@@ -72,5 +72,13 @@ VueRouter.prototype.push = function (location, resolve, reject) {
     originPush.call(this, location, () => { }, () => { })
   }
 }
-
+router.beforeEach((to, from, next) => {
+  // 谷歌
+  document.body.scrollTop = 0
+  // 火狐
+  document.documentElement.scrollTop = 0
+  // safari
+  window.pageYOffset = 0
+  next()
+})
 export default router

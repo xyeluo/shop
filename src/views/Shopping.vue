@@ -7,8 +7,8 @@
         <span class="car">购物车</span>
         <div class="cart-sum">
           <span>已选商品（不包含运费）</span>
-          <strong><em>&nbsp;&yen;</em>0.00</strong>
-          <a href="javascript:void(0);" :class="{ active: isSelected }"
+          <strong><em>&nbsp;&yen;</em>{{ allShop }}</strong>
+          <a href="javascript:void(0);" :class="{ active: isActive }"
             >结&nbsp;算</a
           >
         </div>
@@ -19,7 +19,7 @@
             <input
               id="J_SelectAllCbx1"
               type="checkbox"
-              v-model="isSelected"
+              v-model="isAllSelected"
             /><label for="J_SelectAllCbx1">全选</label>
           </div>
           <div class="th th-info">商品信息</div>
@@ -43,25 +43,53 @@
 
 <script>
 import ShopItem from '@cpts/Shopping/ShopItem.vue'
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'ShoppingVue',
   data () {
     return {
-      isSelected: false,
-      isHome: false
+      isHome: false,
+      isActive: false,
+      allShop: '0.00'
     }
   },
   components: {
     ShopItem
   },
-  watch: {
-    isSelected (n, o) {
-      console.log(n)
+  computed: {
+    ...mapState(['shopItems']),
+    isAllSelected: {
+      get () {
+        return this.$store.state.isAllSelected
+      },
+      set (val) {
+        this.allChecked()
+      }
     }
   },
-  computed: {
-    ...mapState(['shopItems'])
+  watch: {
+    shopItems: {
+      deep: true,
+      immediate: true,
+      handler (n) {
+        let sum = 0
+        for (const item of n) {
+          const temp = item.price * item.num
+          sum += temp
+        }
+        this.allShop = sum
+        for (const item of n) {
+          if (item.isSelected) {
+            this.isActive = true
+            return
+          }
+        }
+        this.isActive = false
+      }
+    }
+  },
+  methods: {
+    ...mapMutations(['allChecked'])
   }
 }
 </script>
@@ -76,11 +104,11 @@ export default {
   background: repeat-y url("@images/pic_028.png");
   background-size: cover;
   .content {
-    height: 1000px;
     background-color: #fff;
     border-radius: 24px;
     margin-bottom: 45px;
     font-family: "Microsoft YaHei";
+    padding-bottom: 10px;
   }
 }
 .hd,
