@@ -23,18 +23,17 @@
                 <li>店铺</li>
               </ul>
             </div>
-            <form
-              class="search-suggest"
-              action="https://s.taobao.com/search"
-            >
+            <form class="search-suggest" action="https://s.taobao.com/search">
               <input
                 type="text"
                 autofocus
+                autocomplete="off"
                 name="q"
                 v-model="search"
                 @input="getSearch"
                 @keydown.down="downNo"
                 @keydown.up="upNo"
+                @blur="deleteKeyWords"
               />
               <button class="com-absolute">搜索</button>
               <ul class="keywords-list com-absolute">
@@ -113,6 +112,9 @@ export default {
         this.No = this.keywords.length - 1
       }
       this.search = this.keywords[this.No][0]
+    },
+    deleteKeyWords () {
+      this.keywords.splice(0, this.keywords.length)
     }
   },
   // 监听页面滚动
