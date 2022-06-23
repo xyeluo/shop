@@ -50,14 +50,11 @@ export default new Vuex.Store({
       })
     },
     deleteMultipe (state) {
-      state.shopItems = state.shopItems.filter((item) => {
-        return item.isSelected === false
-      })
+      state.shopItems = state.shopItems.filter((item) => item.isSelected === false
+      )
     },
     deleteOne (state, id) {
-      state.shopItems = state.shopItems.filter((item) => {
-        return item.id !== id
-      })
+      state.shopItems = state.shopItems.filter((item) => item.id !== id)
     }
   }
 })

@@ -27,7 +27,9 @@
       >
     </div>
     <div class="th th-sum"><span>&yen;</span>{{ total }}</div>
-    <div class="th th-op"><span @click="deleteOne(shopItem.id)">删除</span></div>
+    <div class="th th-op">
+      <span @click="deleteOne(shopItem.id)">删除</span>
+    </div>
   </div>
 </template>
 
@@ -52,6 +54,15 @@ export default {
       return result.toFixed(2)
     }
   },
+  watch: {
+    shopIt: {
+      immediate: true,
+      handler (n) {
+        this.shopItem = n
+      },
+      deep: true
+    }
+  },
   methods: {
     ...mapMutations(['addProd', 'subProd', 'checked', 'deleteOne']),
     sub () {
@@ -69,9 +80,6 @@ export default {
     changeStatus () {
       this.checked(this.shopItem)
     }
-  },
-  beforeMount () {
-    this.shopItem = this.shopIt
   }
 }
 </script>
