@@ -66,6 +66,9 @@ export default {
     &:hover {
       color: #ff5000;
     }
+    a:hover {
+      text-decoration: underline;
+    }
   }
   .service-slash {
     overflow: hidden;
