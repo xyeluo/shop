@@ -57,7 +57,11 @@
           <a href="javascript:" class="plus" @click="add">+</a>&emsp;件
         </div>
         <div class="add com-mouse-point">
-          <a class="addCart" @click="addCart">加入购物车</a>
+          <a class="addCart buy" @click="addCart">立即购买</a>
+          <a class="addCart" @click="addCart"
+            ><span class="iconfont icon-gouwuche-tianchong"></span>
+            加入购物车</a
+          >
         </div>
       </div>
     </div>
@@ -283,8 +287,16 @@ export default {
           height: 36px;
           line-height: 36px;
           text-align: center;
-          display: block;
+          display: inline-block;
           border-radius: 3px;
+        }
+        .buy {
+          width: 134px;
+          color: #e5511d;
+          border-color: #f0cab6;
+          background: #ffe4d0;
+          margin-right: 20px;
+          padding: 0;
         }
       }
     }

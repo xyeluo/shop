@@ -41,15 +41,11 @@
           <div class="member-nickurl">Hi!<span>你好</span></div>
         </div>
         <div class="member-ft com-flex">
-          <a
-            href="//login.taobao.com/member/login.jhtml?f=top&amp;redirectURL=http%3A%2F%2Fwww.taobao.com%2F"
-            class="btn-login"
-            >登录</a
+          <router-link :to="{ name: 'enter' }" class="btn-login"
+            >登录</router-link
           >
-          <a
-            href="//reg.taobao.com/member/new_register.jhtml?from=index&amp;ex_info=&amp;ex_sign="
-            class="btn-register"
-            >注册</a
+          <router-link :to="{ name: 'enter' }" class="btn-register"
+            >注册</router-link
           >
           <a
             href="//ishop.taobao.com/openshop/tb_open_shop_landing.htm?accessCode=tbopenshop_personal"
@@ -204,7 +200,7 @@ export default {
     .banner {
       position: relative;
       width: 564px;
-      img{
+      img {
         height: 331px;
       }
     }
