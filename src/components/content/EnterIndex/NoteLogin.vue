@@ -6,23 +6,26 @@
         type="text"
         name="account"
         id="account"
-        placeholder="请输入手机号"
+        placeholder="请输入账号"
+        autocomplete="off"
+        v-model="account.user"
       />
     </div>
     <div class="item">
       <label for="password"><i class="iconfont icon-yanzhengma"></i></label>
       <input
-        type="text"
-        autocomplete="false"
+        type="password"
+        autocomplete="off"
         name="password"
         id="password"
-        placeholder="请输入验证码"
+        placeholder="请输入密码"
+        v-model="account.pwd"
       />
-      <span class="yanzhenma"> 获取验证码 </span>
+      <!-- <span class="yanzhenma"> 获取验证码 </span> -->
     </div>
     <div class="item">
       <div class="btn">
-        <router-link :to="{name:'home'}">登录</router-link>
+        <a @click="register">注册账号</a>
       </div>
     </div>
     <div class="item">
@@ -43,7 +46,33 @@
 
 <script>
 export default {
-  name: 'NoteLogin'
+  name: 'NoteLogin',
+  data () {
+    return {
+      account: {
+        user: '',
+        pwd: ''
+      },
+      allAcount: []
+    }
+  },
+  methods: {
+    register () {
+      if (this.account.user === '' || this.account.pwd === '') {
+        alert('信息不完整，注册失败！')
+        return
+      }
+      this.allAcount.push(this.account)
+      localStorage.setItem('allAcount', JSON.stringify(this.allAcount))
+      this.$router.push({ name: 'pwdlogin' })
+    }
+  },
+  mounted () {
+    const temp = localStorage.getItem('allAcount')
+    if (temp) {
+      this.allAcount = JSON.parse(temp)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

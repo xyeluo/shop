@@ -44,7 +44,13 @@ const routes = [
     path: '/shopping',
     name: 'shopping',
     component: () => import('@/views/Shopping.vue'),
-    props: true
+    props: true,
+    beforeEnter (to, from, next) {
+      if (router.app.$options.store.state.currentUser === '') {
+        next({ name: 'enter' })
+      }
+      next()
+    }
   },
   {
     // 匹配不到的页面都会重定向到首页

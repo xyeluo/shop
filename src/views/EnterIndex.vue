@@ -21,7 +21,7 @@
               >密码登录</router-link
             >
             <router-link :to="{ name: 'notelogin' }" active-class="active"
-              >短信登录</router-link
+              >注册账号</router-link
             >
           </div>
           <form id="loginContent" onsubmit="return false;">
@@ -148,6 +148,7 @@ export default {
       background: #f40;
       border-color: #f40;
       color: #fff;
+      cursor: pointer;
       a {
         display: inline-block;
 

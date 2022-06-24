@@ -38,7 +38,10 @@
           <div class="avatar">
             <img src="@images/pic_012.jpeg" alt="" />
           </div>
-          <div class="member-nickurl">Hi!<span>你好</span></div>
+          <div class="member-nickurl">
+            Hi!<span v-if="currentUser" style="font-weight:700">{{ currentUser }}</span
+            ><span v-else>你好</span>
+          </div>
         </div>
         <div class="member-ft com-flex">
           <router-link :to="{ name: 'enter' }" class="btn-login"
@@ -98,6 +101,7 @@
 import { getMainService } from '@/request/index.js'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
+import { mapState } from 'vuex'
 export default {
   name: 'MainService',
   data () {
@@ -115,6 +119,9 @@ export default {
       userContents: [],
       tips: []
     }
+  },
+  computed: {
+    ...mapState(['currentUser'])
   },
   created () {
     getMainService().then(({ services, userContents, tips }) => {

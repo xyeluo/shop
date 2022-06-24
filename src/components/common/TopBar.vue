@@ -15,11 +15,15 @@
             </ul>
           </div>
         </li>
-        <li class="topbar-color-change">
+        <li class="topbar-color-change" v-if="currentUser">
+          <a href="javascript:void(0);">{{ currentUser }}</a>
+          <a href="javascript:void(0);" @click="logou">退出登录</a>
+        </li>
+        <li class="topbar-color-change" v-else>
           <router-link :to="{ name: 'enter' }" class="color"
             >亲，请登录</router-link
           >
-          <router-link :to="{ name: 'enter' }">免费注册</router-link>
+          <router-link :to="{ name: 'notelogin' }">免费注册</router-link>
         </li>
         <li class="topbar-color-change"><a href="">手机逛淘宝</a></li>
         <li class="topbar-color-change"><a href="">网页无障碍</a></li>
@@ -102,12 +106,16 @@
 
 <script>
 import { getTopBar } from '@/request/index.js'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'TopBar',
   data () {
     return {
       menus: {}
     }
+  },
+  computed: {
+    ...mapState(['currentUser'])
   },
   created () {
     getTopBar().then((res) => {
@@ -118,6 +126,13 @@ export default {
     isHome: {
       type: Boolean,
       default: () => true
+    }
+  },
+  methods: {
+    ...mapMutations(['logout']),
+    logou () {
+      this.logout()
+      this.$router.push({ name: 'home' })
     }
   }
 }
