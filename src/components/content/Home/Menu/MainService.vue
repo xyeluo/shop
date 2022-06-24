@@ -36,18 +36,28 @@
       <div class="usercontent">
         <div class="member-bd">
           <div class="avatar">
-            <img src="@images/pic_012.jpeg" alt="" />
+            <img src="@images/pic_012.jpeg" />
           </div>
           <div class="member-nickurl">
-            Hi!<span v-if="currentUser" style="font-weight:700">{{ currentUser }}</span
+            Hi!<span v-if="currentUser" style="font-weight: 700">{{
+              currentUser
+            }}</span
             ><span v-else>你好</span>
           </div>
         </div>
-        <div class="member-ft com-flex">
+        <div class="member-ft com-flex" v-if="currentUser">
+          <a href="javascript:void(0);" class="shop"
+            >您购物车商品数量为<span v-if="shopItems.length">{{
+              shopItems.length
+            }}</span>
+            <span v-else>0</span></a
+          >
+        </div>
+        <div class="member-ft com-flex" v-else>
           <router-link :to="{ name: 'enter' }" class="btn-login"
             >登录</router-link
           >
-          <router-link :to="{ name: 'enter' }" class="btn-register"
+          <router-link :to="{ name: 'notelogin' }" class="btn-register"
             >注册</router-link
           >
           <a
@@ -121,7 +131,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['currentUser'])
+    ...mapState(['currentUser', 'shopItems'])
   },
   created () {
     getMainService().then(({ services, userContents, tips }) => {
@@ -294,6 +304,11 @@ export default {
     .btn-open {
       color: #ff5000;
       border: 1px solid #ff915e;
+    }
+    .shop {
+      color: #000;
+      flex: 1;
+      text-align: left;
     }
   }
   .user-taobao {
