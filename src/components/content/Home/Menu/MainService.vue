@@ -109,8 +109,9 @@
 
 <script>
 import { getMainService } from '@/request/index.js'
-import Swiper from 'swiper'
-import 'swiper/css/swiper.min.css'
+// import Swiper from 'swiper'
+import Swiper from 'swiper/swiper-bundle.min.js'
+import 'swiper/swiper-bundle.css'
 import { mapState } from 'vuex'
 export default {
   name: 'MainService',
