@@ -1,7 +1,7 @@
 <template>
   <div class="poditem radius12">
     <a href="javascript:void(0);" class="com-flex">
-      <div class="podImg"><img :src="info.img" /></div>
+      <div class="podImg"><img v-lazy="info.img" /></div>
       <div class="podInfo">
         <div class="title">
           <div class="msg">

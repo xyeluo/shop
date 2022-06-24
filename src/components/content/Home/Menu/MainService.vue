@@ -121,7 +121,7 @@ export default {
       bannerImgs: [
         require('@images/pic_008.jpeg'),
         require('@images/pic_009.jpeg'),
-        require('@images/pic_009.jpeg'),
+        require('@images/pic_032.jpg'),
         require('@images/pic_010.jpeg'),
         require('@images/pic_011.jpeg')
       ],
