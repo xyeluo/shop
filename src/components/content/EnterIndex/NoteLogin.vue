@@ -62,9 +62,23 @@ export default {
         alert('信息不完整，注册失败！')
         return
       }
+      if (this.verifyAccount()) {
+        alert('用户已被占用！')
+        return
+      }
       this.allAcount.push(this.account)
       localStorage.setItem('allAcount', JSON.stringify(this.allAcount))
       this.$router.push({ name: 'pwdlogin' })
+    },
+    verifyAccount () {
+      if (['demo01', 'demo02'].includes(this.account.user)) {
+        return true
+      }
+      for (const item of this.allAcount) {
+        if (item.user === this.account.user) {
+          return true
+        }
+      }
     }
   },
   mounted () {
