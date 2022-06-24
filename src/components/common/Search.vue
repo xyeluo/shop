@@ -5,10 +5,10 @@
         <div class="tbh-logo">
           <div class="logo">
             <h1>
-              <a href="//www.taobao.com" role="img" class="logo-bd">淘宝网</a>
+              <router-link :to="{ name: 'home' }" class="logo-bd">淘宝网</router-link>
             </h1>
             <h2>
-              <a href="//www.taobao.com">淘宝网</a>
+              <router-link :to="{ name: 'home' }">淘宝网</router-link>
             </h2>
           </div>
         </div>

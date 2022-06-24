@@ -40,7 +40,7 @@
     <div class="item last">
       <span class="other-one"> 忘记密码 </span>
       <span class="other-one"> 忘记账号名 </span>
-      <span class="other-one"> 免费注册 </span>
+      <router-link :to="{ name: 'notelogin' }" tag="span" class="other-one"> 免费注册 </router-link>
     </div>
   </div>
 </template>
