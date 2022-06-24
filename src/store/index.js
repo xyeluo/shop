@@ -77,6 +77,9 @@ export default new Vuex.Store({
       })
     },
     setLocalShopping (state) {
+      if (state.currentUser === '') {
+        return
+      }
       localStorage.setItem(state.currentUser, JSON.stringify(state.shopItems))
     },
     logout (state) {
