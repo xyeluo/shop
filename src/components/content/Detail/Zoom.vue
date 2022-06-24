@@ -1,14 +1,10 @@
 <template>
   <div class="spec-preview">
-    <!-- 背景图 -->
     <img :src="currentImg" ref="img" />
-    <!-- 绑事件的位置 -->
     <div class="event" @mousemove="handler"></div>
-    <!-- 大图 -->
     <div class="big">
       <img :src="currentImg" ref="big" />
     </div>
-    <!-- 蒙版 -->
     <div class="mask" ref="mask"></div>
   </div>
 </template>
@@ -21,7 +17,6 @@ export default {
       currentImg: ''
     }
   },
-  // 写props的时候带上默认值  因为ImgList传过来的时候可能是undefined 带上默认值可以确保不是undefined 不会假报错
   props: {
     ImgSrc: {
       type: String,
@@ -30,9 +25,7 @@ export default {
   },
   mounted () {
     this.currentImg = this.ImgSrc
-    // 全局事件总线：获取兄弟组件传递过来的图片地址
     this.$bus.$on('getIndex', (src) => {
-      // 修改当前响应式数据
       this.currentImg = src
     })
   },
@@ -42,12 +35,10 @@ export default {
       const mask = this.$refs.mask
       let left = event.offsetX - mask.offsetWidth / 2
       let top = event.offsetY - mask.offsetHeight / 2
-      // 约束范围
       if (left <= 0) left = 0
       if (left >= mask.offsetWidth) left = mask.offsetWidth
       if (top <= 0) top = 0
       if (top >= mask.offsetHeight) top = mask.offsetHeight
-      // 修改元素的left|top属性值
       mask.style.left = left + 'px'
       mask.style.top = top + 'px'
       big.style.left = -2 * left + 'px'

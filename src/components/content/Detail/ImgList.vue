@@ -3,7 +3,7 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(silde, index) in ImgList" :key="index">
         <img
-          :src="silde"
+          v-lazy="silde"
           :class="{ active: currentIndex == index }"
           @mouseover="changeCurrentIndex(index)"
         />

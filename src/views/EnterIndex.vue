@@ -3,7 +3,11 @@
     <div class="header com-flex-center">
       <div class="logo enter-width com-margin-center com-flex">
         <h1>
-          <a title="淘宝网" class="logo-link" href="//www.taobao.com"></a>
+          <router-link
+            title="淘宝网"
+            class="logo-link"
+            :to="{ name: 'home' }"
+          ></router-link>
         </h1>
         <div>
           <a href="javascript:void(0)" class="wza">网站无障碍</a>
@@ -171,7 +175,7 @@ export default {
       }
       color: #6c6c6c;
     }
-    &.last{
+    &.last {
       margin-top: -19px;
       margin-bottom: 0;
       margin-left: 120px;
