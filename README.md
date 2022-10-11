@@ -8,7 +8,7 @@
 
 使用Netlify部署 [在线预览](https://tb.yhyl.fun/#/home)
 
-## 技术栈
+## 主要技术栈
 
 - Vue2 框架
 
