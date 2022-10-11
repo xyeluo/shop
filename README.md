@@ -62,7 +62,6 @@ yarn serve
 
 - 登录界面
 
-  
   ![登录界面](./docs/img/Snipaste_2022-06-25_20-29-38.jpg)
 
 - 商品详情页
