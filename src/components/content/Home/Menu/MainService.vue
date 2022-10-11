@@ -80,8 +80,7 @@
 
 <script>
 import { getMainService } from '@/request/index.js'
-// import Swiper from 'swiper'
-import Swiper from 'swiper/swiper-bundle.min.js'
+import { Swiper, Pagination, Navigation, Autoplay } from 'swiper'
 import 'swiper/swiper-bundle.css'
 import { mapState } from 'vuex'
 export default {
@@ -108,6 +107,7 @@ export default {
   },
   mounted () {
     // 广告轮播图
+    Swiper.use([Navigation, Pagination, Autoplay])
     this.bannerSw = new Swiper('.ba', {
       autoplay: {
         delay: 3500 // 3秒切换一次
