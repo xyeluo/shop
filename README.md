@@ -1,5 +1,7 @@
 # shop
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2925f7a6-5adf-41a6-b0a7-094c2aa94502/deploy-status)](https://app.netlify.com/sites/graceful-quokka-8a372f/deploys)
+
 ## 介绍
 
 该项目为前端 vue 实训简易仿淘宝 pc 端，包含四个页面，首页、登录页面、商品详情页、购物车页面
