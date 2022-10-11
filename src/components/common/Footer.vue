@@ -3,8 +3,7 @@
     <div class="inner com-flex-center">
       <div class="inner-item" v-for="(item, index) in foot" :key="index">
         <h4>
-          <i class="iconfont" :class="item.class"></i
-          ><span>{{ item.msg }}</span>
+          <i class="iconfont" :class="item.class"></i><span>{{ item.msg }}</span>
         </h4>
         <ul>
           <li v-for="(ite, i) in item.ul" :key="i">{{ ite.msg }}</li>
@@ -23,41 +22,22 @@ export default {
         {
           class: 'icon-anquan',
           msg: '消费者保障',
-          ul: [
-            { msg: '保障范围' },
-            { msg: '退货退款流程' },
-            { msg: '服务中心' },
-            { msg: '更多特色服务' }
-          ]
+          ul: [{ msg: '保障范围' }, { msg: '退货退款流程' }, { msg: '服务中心' }, { msg: '更多特色服务' }]
         },
         {
           class: 'icon-bangzhu',
           msg: '消费者保障',
-          ul: [
-            { msg: '保障范围' },
-            { msg: '退货退款流程' },
-            { msg: '服务中心' },
-            { msg: '更多特色服务' }
-          ]
+          ul: [{ msg: '保障范围' }, { msg: '退货退款流程' }, { msg: '服务中心' }, { msg: '更多特色服务' }]
         },
         {
           class: 'icon-fukuan',
           msg: '消费者保障',
-          ul: [
-            { msg: '保障范围' },
-            { msg: '退货退款流程' },
-            { msg: '服务中心' },
-            { msg: '更多特色服务' }
-          ]
+          ul: [{ msg: '保障范围' }, { msg: '退货退款流程' }, { msg: '服务中心' }, { msg: '更多特色服务' }]
         },
         {
           class: 'icon-taobaotese',
           msg: '消费者保障',
-          ul: [
-            { msg: '保障范围' },
-            { msg: '退货退款流程' },
-            { msg: '服务中心' }
-          ]
+          ul: [{ msg: '保障范围' }, { msg: '退货退款流程' }, { msg: '服务中心' }]
         }
       ]
     }

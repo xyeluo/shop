@@ -9,18 +9,10 @@
       </ul>
     </div>
     <div class="main-inner com-flex">
-      <div
-        class="banner radius12"
-        @mouseenter="bannerSw.autoplay.stop()"
-        @mouseleave="bannerSw.autoplay.start()"
-      >
+      <div class="banner radius12" @mouseenter="bannerSw.autoplay.stop()" @mouseleave="bannerSw.autoplay.start()">
         <div class="ba">
           <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, index) in bannerImgs"
-              :key="index"
-            >
+            <div class="swiper-slide" v-for="(item, index) in bannerImgs" :key="index">
               <!-- <img src="../assets/logo.png" alt=""> -->
               <img :src="item" alt />
             </div>
@@ -39,32 +31,19 @@
             <img src="@images/pic_012.jpeg" />
           </div>
           <div class="member-nickurl">
-            Hi!<span v-if="currentUser" style="font-weight: 700">{{
-              currentUser
-            }}</span
+            Hi!<span v-if="currentUser" style="font-weight: 700">{{ currentUser }}</span
             ><span v-else>你好</span>
           </div>
         </div>
         <div class="member-ft com-flex" v-if="currentUser">
           <a href="javascript:void(0);" class="shop"
-            >您购物车商品数量为<span v-if="shopItems.length">{{
-              shopItems.length
-            }}</span>
-            <span v-else>0</span></a
+            >您购物车商品数量为<span v-if="shopItems.length">{{ shopItems.length }}</span> <span v-else>0</span></a
           >
         </div>
         <div class="member-ft com-flex" v-else>
-          <router-link :to="{ name: 'enter' }" class="btn-login"
-            >登录</router-link
-          >
-          <router-link :to="{ name: 'notelogin' }" class="btn-register"
-            >注册</router-link
-          >
-          <a
-            href="//ishop.taobao.com/openshop/tb_open_shop_landing.htm?accessCode=tbopenshop_personal"
-            class="btn-open ml3"
-            >开店</a
-          >
+          <router-link :to="{ name: 'enter' }" class="btn-login">登录</router-link>
+          <router-link :to="{ name: 'notelogin' }" class="btn-register">注册</router-link>
+          <a href="//ishop.taobao.com/openshop/tb_open_shop_landing.htm?accessCode=tbopenshop_personal" class="btn-open ml3">开店</a>
         </div>
         <div class="user-taobao com-flex">
           <div class="user-content">
@@ -85,17 +64,9 @@
           </div>
         </div>
         <div class="tips">
-          <div
-            class="tipsSw"
-            @mouseenter="tipsSw.autoplay.stop()"
-            @mouseleave="tipsSw.autoplay.start()"
-          >
+          <div class="tipsSw" @mouseenter="tipsSw.autoplay.stop()" @mouseleave="tipsSw.autoplay.start()">
             <ul class="swiper-wrapper">
-              <li
-                class="swiper-slide"
-                v-for="(item, index) in tips"
-                :key="index"
-              >
+              <li class="swiper-slide" v-for="(item, index) in tips" :key="index">
                 <span>{{ item.title }}</span
                 >{{ item.msg }}
               </li>
@@ -118,13 +89,7 @@ export default {
   data () {
     return {
       services: [],
-      bannerImgs: [
-        require('@images/pic_008.jpeg'),
-        require('@images/pic_009.jpeg'),
-        require('@images/pic_032.jpg'),
-        require('@images/pic_010.jpeg'),
-        require('@images/pic_011.jpeg')
-      ],
+      bannerImgs: [require('@images/pic_008.jpeg'), require('@images/pic_009.jpeg'), require('@images/pic_032.jpg'), require('@images/pic_010.jpeg'), require('@images/pic_011.jpeg')],
       bannerSw: '',
       tipsSw: '',
       userContents: [],

@@ -2,25 +2,11 @@
   <div class="form-content">
     <div class="item">
       <label for="account"><i class="iconfont icon-yonghu"></i></label>
-      <input
-        type="text"
-        name="account"
-        id="account"
-        placeholder="账号名/邮箱/手机号"
-        autocomplete="off"
-        v-model="account.user"
-      />
+      <input type="text" name="account" id="account" placeholder="账号名/邮箱/手机号" autocomplete="off" v-model="account.user" />
     </div>
     <div class="item">
       <label for="password"><i class="iconfont icon-ziyuanxhdpi"></i></label>
-      <input
-        type="password"
-        autocomplete="off"
-        name="password"
-        id="password"
-        placeholder="请输入登录密码"
-        v-model="account.pwd"
-      />
+      <input type="password" autocomplete="off" name="password" id="password" placeholder="请输入登录密码" v-model="account.pwd" />
     </div>
     <div class="item">
       <div class="btn">

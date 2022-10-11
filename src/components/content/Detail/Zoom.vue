@@ -73,7 +73,7 @@ export default {
   .mask {
     width: 50%;
     height: 50%;
-    background: url("@images/pic_0.png") repeat scroll 0 0 transparent;
+    background: url('@images/pic_0.png') repeat scroll 0 0 transparent;
     position: absolute;
     left: 0;
     top: 0;

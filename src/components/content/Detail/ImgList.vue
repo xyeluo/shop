@@ -2,11 +2,7 @@
   <div class="swiper-container" ref="cur">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(silde, index) in ImgList" :key="index">
-        <img
-          v-lazy="silde"
-          :class="{ active: currentIndex == index }"
-          @mouseover="changeCurrentIndex(index)"
-        />
+        <img v-lazy="silde" :class="{ active: currentIndex == index }" @mouseover="changeCurrentIndex(index)" />
       </div>
     </div>
   </div>

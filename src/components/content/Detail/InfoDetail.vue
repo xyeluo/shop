@@ -28,9 +28,7 @@
           </div>
           <div class="fixWidth">
             <i class="red-bg">加价购</i>
-            <em class="t-gray"
-              >满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换购热销商品</em
-            >
+            <em class="t-gray">满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换购热销商品</em>
           </div>
         </div>
       </div>
@@ -58,10 +56,7 @@
         </div>
         <div class="add com-mouse-point">
           <a class="addCart buy" @click="addCart">立即购买</a>
-          <a class="addCart" @click="addCart"
-            ><span class="iconfont icon-gouwuche-tianchong"></span>
-            加入购物车</a
-          >
+          <a class="addCart" @click="addCart"><span class="iconfont icon-gouwuche-tianchong"></span> 加入购物车</a>
         </div>
       </div>
     </div>

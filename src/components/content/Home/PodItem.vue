@@ -82,7 +82,7 @@ export default {
       color: #ff5000;
       font-size: 22px;
       line-height: 22px;
-      font-family: "Microsoft Yahei";
+      font-family: 'Microsoft Yahei';
     }
   }
 }

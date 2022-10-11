@@ -2,15 +2,10 @@
   <div class="new-service radius12">
     <h2>分类</h2>
     <ul class="service-bd">
-      <li
-        class="com-mouse-point"
-        v-for="(item, index) in services"
-        :key="index"
-      >
+      <li class="com-mouse-point" v-for="(item, index) in services" :key="index">
         <i class="iconfont" :class="item.class"></i>
         <a :href="item.first.href">{{ item.first.msg }}</a
-        ><span class="service-slash">/</span>
-        <a :href="item.second.href">{{ item.second.msg }}</a
+        ><span class="service-slash">/</span> <a :href="item.second.href">{{ item.second.msg }}</a
         ><span class="service-slash">/</span>
         <a href="item.third.href">{{ item.third.msg }}</a>
       </li>

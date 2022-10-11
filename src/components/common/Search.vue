@@ -24,35 +24,18 @@
               </ul>
             </div>
             <form class="search-suggest" action="https://s.taobao.com/search">
-              <input
-                type="text"
-                autofocus
-                autocomplete="off"
-                name="q"
-                v-model="search"
-                @input="getSearch"
-                @keydown.down="downNo"
-                @keydown.up="upNo"
-                @blur="deleteKeyWords"
-              />
+              <input type="text" autofocus autocomplete="off" name="q" v-model="search" @input="getSearch" @keydown.down="downNo" @keydown.up="upNo" @blur="deleteKeyWords" />
               <button class="com-absolute">搜索</button>
               <ul class="keywords-list com-absolute">
                 <li v-for="(item, index) in keywords" :key="index">
-                  <a
-                    :href="`https://s.taobao.com/search?q=${item[0]}`"
-                    :class="{ 'current-a': index === No }"
-                    >{{ item[0] }}</a
-                  >
+                  <a :href="`https://s.taobao.com/search?q=${item[0]}`" :class="{ 'current-a': index === No }">{{ item[0] }}</a>
                 </li>
               </ul>
             </form>
           </div>
         </div>
         <div class="tbh-qr-wrapper com-absolute" v-show="isHome">
-          <a
-            href="https://market.m.taobao.com/app/fdilab/download-page/main/index.html"
-            class="qr-bd"
-          >
+          <a href="https://market.m.taobao.com/app/fdilab/download-page/main/index.html" class="qr-bd">
             <span id="mtb" class="h">下载淘宝</span>
             <img class="qrcode" src="@images/pic_002.png" />
           </a>
@@ -93,10 +76,7 @@ export default {
       } catch (error) {}
     },
     handleTabFix () {
-      const scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       scrollTop > this.offsetTo ? (this.isTop = true) : (this.isTop = false)
     },
     downNo () {
@@ -173,7 +153,7 @@ export default {
       @include wh(142px, 0);
       overflow: hidden;
       text-indent: -9999px;
-      background: url("@images/pic_018.png") 0 0 no-repeat;
+      background: url('@images/pic_018.png') 0 0 no-repeat;
     }
   }
   h2 {
@@ -184,7 +164,7 @@ export default {
       @include wh(80px, 0);
       text-indent: -9999px;
       overflow: hidden;
-      background: url("@images/pic_019.png") 0 0 no-repeat;
+      background: url('@images/pic_019.png') 0 0 no-repeat;
     }
   }
 }

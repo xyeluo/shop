@@ -20,9 +20,7 @@
           <a href="javascript:void(0);" @click="logou">退出登录</a>
         </li>
         <li class="topbar-color-change" v-else>
-          <router-link :to="{ name: 'enter' }" class="color"
-            >亲，请登录</router-link
-          >
+          <router-link :to="{ name: 'enter' }" class="color">亲，请登录</router-link>
           <router-link :to="{ name: 'notelogin' }">免费注册</router-link>
         </li>
         <li class="topbar-color-change"><a href="">手机逛淘宝</a></li>
@@ -31,9 +29,7 @@
       <ul class="right com-flex-center com-mouse-point">
         <li class="topbar-color-change" v-show="!isHome">
           <div class="taopbar-bd-hd">
-            <router-link tag="span" :to="{ name: 'home' }"
-              >淘宝网首页</router-link
-            >
+            <router-link tag="span" :to="{ name: 'home' }">淘宝网首页</router-link>
           </div>
         </li>
         <li class="topbar-bd-change">
@@ -50,10 +46,7 @@
           </div>
         </li>
         <li class="topbar-color-change">
-          <router-link :to="{ name: 'shopping' }"
-            ><span class="iconfont icon-gouwuche-tianchong color"></span
-            >购物车</router-link
-          >
+          <router-link :to="{ name: 'shopping' }"><span class="iconfont icon-gouwuche-tianchong color"></span>购物车</router-link>
         </li>
         <li class="topbar-bd-change">
           <div class="topbar-bd-hd">
@@ -69,10 +62,7 @@
             </ul>
           </div>
         </li>
-        <li class="topbar-color-change">
-          <a href="">商品分类</a><a href="">免费开店</a
-          ><span class="slicer">|</span>
-        </li>
+        <li class="topbar-color-change"><a href="">商品分类</a><a href="">免费开店</a><span class="slicer">|</span></li>
         <li class="topbar-bd-change">
           <div class="topbar-bd-hd">
             <span>千牛卖家中心</span>
@@ -139,7 +129,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$t: ".topbar";
+$t: '.topbar';
 @mixin topbar($type) {
   @if ($type==bd) {
     border: 1px solid #eee;

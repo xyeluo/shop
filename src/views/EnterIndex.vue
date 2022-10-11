@@ -3,17 +3,11 @@
     <div class="header com-flex-center">
       <div class="logo enter-width com-margin-center com-flex">
         <h1>
-          <router-link
-            title="淘宝网"
-            class="logo-link"
-            :to="{ name: 'home' }"
-          ></router-link>
+          <router-link title="淘宝网" class="logo-link" :to="{ name: 'home' }"></router-link>
         </h1>
         <div>
           <a href="javascript:void(0)" class="wza">网站无障碍</a>
-          <a href="https://survey.taobao.com/survey/Q095thIx2" class="link">
-            <i class="iconfont icon-ai42"></i> "登录页面"改进建议
-          </a>
+          <a href="https://survey.taobao.com/survey/Q095thIx2" class="link"> <i class="iconfont icon-ai42"></i> "登录页面"改进建议 </a>
         </div>
       </div>
     </div>
@@ -21,12 +15,8 @@
       <div class="enter-width com-margin-center">
         <div id="login-box-wrap" class="com-absolute">
           <div id="loginTitle">
-            <router-link :to="{ name: 'pwdlogin' }" active-class="active"
-              >密码登录</router-link
-            >
-            <router-link :to="{ name: 'notelogin' }" active-class="active"
-              >注册账号</router-link
-            >
+            <router-link :to="{ name: 'pwdlogin' }" active-class="active">密码登录</router-link>
+            <router-link :to="{ name: 'notelogin' }" active-class="active">注册账号</router-link>
           </div>
           <form id="loginContent" onsubmit="return false;">
             <keep-alive :include="['pwdlogin', 'notelogin']">
@@ -64,7 +54,7 @@ export default {
       display: inline-block;
       width: 110px;
       height: 44px;
-      background: url("@images/pic_019.png") no-repeat;
+      background: url('@images/pic_019.png') no-repeat;
     }
   }
   .wza,
@@ -84,7 +74,7 @@ export default {
   justify-content: space-between;
 }
 .content {
-  background: url("@images/pic_027.jpg") no-repeat center;
+  background: url('@images/pic_027.jpg') no-repeat center;
   .enter-width {
     position: relative;
     height: 600px;
@@ -105,7 +95,7 @@ export default {
         a {
           display: inline-block;
           margin-right: 9px;
-          font: 700 16px "Microsoft Yahei";
+          font: 700 16px 'Microsoft Yahei';
         }
         .active {
           border-bottom: 2px solid #000;
@@ -159,7 +149,7 @@ export default {
         @include wh(100%, $wh);
         line-height: $wh;
       }
-      font: 400 16px "Microsoft Yahei";
+      font: 400 16px 'Microsoft Yahei';
     }
     .other-one {
       margin-right: 6px;

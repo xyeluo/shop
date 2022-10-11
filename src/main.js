@@ -30,5 +30,5 @@ new Vue({
   beforeCreate () {
     Vue.prototype.$bus = this
   },
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app')

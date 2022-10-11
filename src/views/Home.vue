@@ -14,17 +14,10 @@
       <div class="layer" ref="layer">
         <div class="recommend">
           <div class="recommend-heade">
-            <h3>
-              <span>猜你喜欢</span><img src="@images/pic_020.png" alt="" />
-            </h3>
+            <h3><span>猜你喜欢</span><img src="@images/pic_020.png" alt="" /></h3>
           </div>
           <div class="recommend-content">
-            <PodItem
-              v-for="(item, index) in prodInfo"
-              :key="index"
-              :info="item"
-              @click.native="goToDetail(item)"
-            ></PodItem>
+            <PodItem v-for="(item, index) in prodInfo" :key="index" :info="item" @click.native="goToDetail(item)"></PodItem>
           </div>
         </div>
       </div>
@@ -46,18 +39,7 @@ export default {
   data () {
     return {
       isHome: true,
-      searchHot: [
-        '新款连衣裙',
-        '四件套',
-        '潮流T恤',
-        '时尚女鞋',
-        '短裤',
-        '半身裙',
-        '男士外套',
-        '墙纸',
-        '行车记录仪',
-        '新款男鞋'
-      ],
+      searchHot: ['新款连衣裙', '四件套', '潮流T恤', '时尚女鞋', '短裤', '半身裙', '男士外套', '墙纸', '行车记录仪', '新款男鞋'],
       prodInfo: [],
       offsetTo: '',
       showBT: false
@@ -66,10 +48,7 @@ export default {
   methods: {
     ...mapMutations(['setCurrent']),
     showBackTop () {
-      const scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       scrollTop > this.offsetTo ? (this.showBT = true) : (this.showBT = false)
     },
     goToDetail (info) {
@@ -104,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$t: ".home";
+$t: '.home';
 
 #{$t} {
   width: 100%;

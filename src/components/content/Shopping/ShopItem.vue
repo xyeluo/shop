@@ -1,12 +1,7 @@
 <template>
   <div class="shopitem com-flex">
     <div class="th th-chk">
-      <input
-        id="J_SelectAllCbx1"
-        @click="changeStatus"
-        type="checkbox"
-        v-model="shopItem.isSelected"
-      />
+      <input id="J_SelectAllCbx1" @click="changeStatus" type="checkbox" v-model="shopItem.isSelected" />
       <img :src="shopItem.img" />
     </div>
     <div class="th th-info">
@@ -18,14 +13,7 @@
       </div>
     </div>
     <div class="th th-price"><span>&yen;</span>{{ shopItem.price }}</div>
-    <div class="th th-amount com-flex-center">
-      <span class="sub" @click="sub">-</span
-      ><input type="number" v-model="shopItem.num" disabled /><span
-        class="add"
-        @click="add"
-        >+</span
-      >
-    </div>
+    <div class="th th-amount com-flex-center"><span class="sub" @click="sub">-</span><input type="number" v-model="shopItem.num" disabled /><span class="add" @click="add">+</span></div>
     <div class="th th-sum"><span>&yen;</span>{{ total }}</div>
     <div class="th th-op">
       <span @click="deleteOne(shopItem.id)">删除</span>
@@ -90,10 +78,11 @@ export default {
   height: $h;
 }
 .shopitem {
-  height: 119px;
+  height: 117px;
   margin: 25px 24px;
   background-color: #f5f5f5;
   border-radius: 18px;
+  border: 1px solid #f7f9fa;
   padding: 20px;
   box-sizing: border-box;
   .th-chk {
@@ -159,6 +148,9 @@ export default {
       color: #f50;
       text-decoration: underline;
     }
+  }
+  &:hover {
+    border-color: #ff915e;
   }
 }
 </style>

@@ -40,7 +40,7 @@ export default new Vuex.Store({
     checked (state, shopitem) {
       let flag = true
       shopitem.isSelected = !shopitem.isSelected
-      state.shopItems.forEach(item => {
+      state.shopItems.forEach((item) => {
         if (!item.isSelected) {
           flag = false
         }
@@ -54,7 +54,8 @@ export default new Vuex.Store({
       })
     },
     deleteMultipe (state) {
-      state.shopItems = state.shopItems.filter((item) => item.isSelected === false
+      state.shopItems = state.shopItems.filter(
+        (item) => item.isSelected === false
       )
     },
     deleteOne (state, id) {

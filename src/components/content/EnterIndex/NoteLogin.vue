@@ -2,25 +2,11 @@
   <div class="form-content">
     <div class="item">
       <label for="account"><i class="iconfont icon-shouji"></i></label>
-      <input
-        type="text"
-        name="account"
-        id="account"
-        placeholder="请输入账号"
-        autocomplete="off"
-        v-model="account.user"
-      />
+      <input type="text" name="account" id="account" placeholder="请输入账号" autocomplete="off" v-model="account.user" />
     </div>
     <div class="item">
       <label for="password"><i class="iconfont icon-yanzhengma"></i></label>
-      <input
-        type="password"
-        autocomplete="off"
-        name="password"
-        id="password"
-        placeholder="请输入密码"
-        v-model="account.pwd"
-      />
+      <input type="password" autocomplete="off" name="password" id="password" placeholder="请输入密码" v-model="account.pwd" />
       <!-- <span class="yanzhenma"> 获取验证码 </span> -->
     </div>
     <div class="item">
@@ -39,9 +25,7 @@
       </span>
     </div>
     <div class="item last">
-      <router-link :to="{ name: 'notelogin' }" class="other-one">
-        免费注册
-      </router-link>
+      <router-link :to="{ name: 'notelogin' }" class="other-one"> 免费注册 </router-link>
     </div>
   </div>
 </template>

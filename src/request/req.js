@@ -6,9 +6,12 @@ const requests = axios.create({
 requests.interceptors.request.use((config) => {
   return config
 })
-requests.interceptors.response.use((res) => {
-  return res.data
-}, (err) => {
-  return Promise.reject(new Error(err))
-})
+requests.interceptors.response.use(
+  (res) => {
+    return res.data
+  },
+  (err) => {
+    return Promise.reject(new Error(err))
+  }
+)
 export default requests

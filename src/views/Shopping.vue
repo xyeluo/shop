@@ -5,31 +5,17 @@
     <div class="content home-width com-margin-center">
       <div class="hd com-flex">
         <span class="car"
-          >购物车<span v-show="shopItems.length !== 0"
-            >&nbsp;（全部{{ shopItems.length }}）</span
-          ></span
+          >购物车<span v-show="shopItems.length !== 0">&nbsp;（全部{{ shopItems.length }}）</span></span
         >
         <div class="cart-sum">
           <span>已选商品（不包含运费）</span>
           <strong><em>&nbsp;&yen;</em>{{ allShop }}</strong>
-          <a
-            href="javascript:void(0);"
-            @click="deleteMultipe"
-            :class="{ active: isActive }"
-            >结&nbsp;算</a
-          >
+          <a href="javascript:void(0);" @click="deleteMultipe" :class="{ active: isActive }">结&nbsp;算</a>
         </div>
       </div>
       <div class="cartmain">
         <div class="cart-table-th com-flex">
-          <div class="th th-chk">
-            <input
-              id="J_SelectAllCbx1"
-              type="checkbox"
-              v-model="isAllSelected"
-              v-show="shopItems.length !== 0"
-            /><label for="J_SelectAllCbx1">全选</label>
-          </div>
+          <div class="th th-chk"><input id="J_SelectAllCbx1" type="checkbox" v-model="isAllSelected" v-show="shopItems.length !== 0" /><label for="J_SelectAllCbx1">全选</label></div>
           <div class="th th-info">商品信息</div>
           <div class="th th-price">单价</div>
           <div class="th th-amount">数量</div>
@@ -37,18 +23,12 @@
           <div class="th th-op">操作</div>
         </div>
         <div class="cart-list">
-          <ShopItem
-            v-for="(item, index) in shopItems"
-            :key="index"
-            :shopIt="item"
-          ></ShopItem>
+          <ShopItem v-for="(item, index) in shopItems" :key="index" :shopIt="item"></ShopItem>
         </div>
       </div>
       <div class="ft"></div>
     </div>
-    <SideBar
-      :sidebar="[{ img: require('@images/pic_024.png'), msg: '反馈' }]"
-    ></SideBar>
+    <SideBar :sidebar="[{ img: require('@images/pic_024.png'), msg: '反馈' }]"></SideBar>
   </div>
 </template>
 
@@ -115,13 +95,13 @@ export default {
 }
 .shopping {
   width: 100vw;
-  background: repeat-y url("@images/pic_028.png");
+  background: repeat-y url('@images/pic_028.png');
   background-size: cover;
   .content {
     background-color: #fff;
     border-radius: 24px;
     margin-bottom: 45px;
-    font-family: "Microsoft YaHei";
+    font-family: 'Microsoft YaHei';
     padding-bottom: 10px;
   }
 }
