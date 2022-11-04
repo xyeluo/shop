@@ -1,6 +1,6 @@
 # shop
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2925f7a6-5adf-41a6-b0a7-094c2aa94502/deploy-status)](https://app.netlify.com/sites/graceful-quokka-8a372f/deploys)
+![Netlify Status](https://api.netlify.com/api/v1/badges/2925f7a6-5adf-41a6-b0a7-094c2aa94502/deploy-status)
 
 ## 介绍
 
