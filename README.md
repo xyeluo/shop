@@ -49,7 +49,7 @@
 ## 使用
 
 ```
-git clone --depth=1 https://github.com/tk914/shop.git
+git clone https://github.com/tk914/shop.git --depth=1
 cd shop
 yarn install
 yarn serve
