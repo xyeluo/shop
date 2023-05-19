@@ -23,6 +23,7 @@
           <div class="th th-op">操作</div>
         </div>
         <div class="cart-list">
+          <div class="default-list" v-if="!shopItems.length">您的购物车是空的~</div>
           <ShopItem v-for="(item, index) in shopItems" :key="index" :shopIt="item"></ShopItem>
         </div>
       </div>
@@ -160,6 +161,13 @@ export default {
     font-weight: bold;
     font-size: 14px;
     line-height: $h;
+  }
+  .default-list {
+    color: #aaaaaa;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 300px;
   }
 }
 </style>

@@ -57,9 +57,11 @@ export default new Vuex.Store({
       state.shopItems = state.shopItems.filter(
         (item) => item.isSelected === false
       )
+      this.commit('setLocalShopping')
     },
     deleteOne (state, id) {
       state.shopItems = state.shopItems.filter((item) => item.id !== id)
+      this.commit('setLocalShopping')
     },
     setUser (state, user) {
       state.currentUser = user

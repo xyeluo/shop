@@ -73,10 +73,14 @@ export default {
           output: 'jsonp'
         })
         this.keywords = res.result
-      } catch (error) {}
+      } catch (error) {
+        console.log('jsonp error:' + error)
+      }
     },
     handleTabFix () {
+      const search = document.querySelector('.search')
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.offsetTo = search.offsetTop
       scrollTop > this.offsetTo ? (this.isTop = true) : (this.isTop = false)
     },
     downNo () {
@@ -99,12 +103,11 @@ export default {
   },
   // 监听页面滚动
   mounted () {
-    this.offsetTo = this.$refs.search.offsetTop
-    window.addEventListener('scroll', this.handleTabFix, true)
+    window.addEventListener('scroll', this.handleTabFix.bind(this))
   },
   // 离开当前组件前清除滚动监听,
   beforeRouteLeave (to, from, next) {
-    window.removeEventListener('scroll', this.handleTabFix, true)
+    window.removeEventListener('scroll', this.handleTabFix)
     next()
   }
 }
@@ -278,13 +281,14 @@ export default {
   }
 }
 .wrap-fixed {
+  height: 40px;
   .top {
     z-index: 1001;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: inherit;
     padding: 7px 0;
     background: #fff;
   }
