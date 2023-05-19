@@ -98,7 +98,9 @@ export default {
       this.search = this.keywords[this.No][0]
     },
     deleteKeyWords () {
-      this.keywords.splice(0, this.keywords.length)
+      setTimeout(() => {
+        this.keywords.splice(0, this.keywords.length)
+      }, 200)
     }
   },
   // 监听页面滚动
